@@ -1,0 +1,19 @@
+.custom-form-width {
+    width: 400px;
+  }
+  .form-control-custom:focus {
+    outline: none;
+    border: 1px solid rgb(100, 13, 13);
+    /* box-shadow: none; */
+  }
+  
+  .form-control-custom {
+    border: 1px solid rgb(212, 199, 199);
+    padding: 8px;
+    border-radius: 5px;
+  }
+  @media (max-width: 500px) {
+    .custom-form-width {
+      width: 80vw;
+    }
+  }

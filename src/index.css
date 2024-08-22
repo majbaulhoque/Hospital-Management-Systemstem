@@ -1,4 +1,7 @@
-.dashboard{
-  background-color: rgb(4, 181, 252);
-  width: 200px;
+.bg-main {
+  background-color: rgb(52, 41, 41) !important;
+  /* background-color: rgb(44, 44, 44); */
+}
+.text-main {
+  color: rgb(100, 13, 13) !important;
 }

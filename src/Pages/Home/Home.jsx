@@ -1,11 +1,11 @@
-import SideMenuBar from "../../Component/Side Menu Bar/SideMenuBar";
+
 
 
 
 const Home = () => {
     return (
         <div>
-            <SideMenuBar />
+           this is home
         </div>
     );
 };
