@@ -21,7 +21,7 @@ const Sidebar = () => {
   const [open, setOpen] = useState(true);
 
   return (
-    <div className="position-fixed z-3">
+    <div  className="position-fixed z-3" style={{ top: 0, left: 0, bottom: 0 }}>
       {/* Toggle Button  */}
       {!open && (
         <button
@@ -38,8 +38,8 @@ const Sidebar = () => {
       <Collapse in={open} className="position-absolute z-2" dimension="width">
         <div
           id="sidebar"
-          className="custom-sidebar-width  text-white p-4 custom-bg-main "
-          style={{ minHeight: "100vh" }}
+          className="custom-sidebar-width overflow-y-scroll  text-white p-4 custom-bg-main "
+          style={{ height: "100vh" }}
         >
           {/* Toggle cross Button  */}
           <button

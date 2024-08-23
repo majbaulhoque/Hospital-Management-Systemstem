@@ -5,7 +5,7 @@ import "../assets/styles/sidebar/index.css"
 
 const MainLayout = () => {
   return (
-    <div className="d-lg-flex gap-5 w-100">
+    <div className="d-lg-flex  gap-5 w-100">
       <div className="custom-sidebar-width">
         <Sidebar />
       </div>
