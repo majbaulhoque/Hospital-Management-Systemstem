@@ -2,11 +2,10 @@ import { useState } from "react";
 import { RiMenu3Fill } from "react-icons/ri";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { FaUserDoctor, FaUserPen, FaChrome } from "react-icons/fa6";
-import { FaRegHospital } from "react-icons/fa";
-import { FaParking } from "react-icons/fa";
-import { RxCross1 } from "react-icons/rx";
+import { FaParking, FaRegHospital } from "react-icons/fa";
 import {
   MdOutlineEventAvailable,
+  MdOutlineKeyboardArrowRight,
   MdOutlineSupervisorAccount,
 } from "react-icons/md";
 import { TbReport } from "react-icons/tb";
@@ -16,16 +15,17 @@ import Collapse from "react-bootstrap/Collapse";
 import "../../assets/styles/sidebar/index.css";
 import { Link } from "react-router-dom";
 
+
 const Sidebar = () => {
   // toggle state
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   return (
-    <div className="position-relative">
-      {/* Toggle Button for small device */}
+    <div className="position-fixed z-3">
+      {/* Toggle Button  */}
       {!open && (
         <button
-          className="d-lg-none  mb-3 border-0"
+          className=" mb-3 ms-3 mt-3 border-0"
           onClick={() => setOpen(!open)}
           aria-controls="sidebar"
           aria-expanded={open}
@@ -35,25 +35,26 @@ const Sidebar = () => {
       )}
 
       {/* Sidebar Content */}
-      <Collapse in={open} className="position-relative" dimension="width">
+      <Collapse in={open} className="position-absolute z-2" dimension="width">
         <div
           id="sidebar"
-          className="custom-sidebar-width  text-white p-4 custom-bg-main d-lg-block"
+          className="custom-sidebar-width  text-white p-4 custom-bg-main "
           style={{ minHeight: "100vh" }}
         >
-          {/* Toggle cross Button for small device */}
+          {/* Toggle cross Button  */}
           <button
             style={{ right: 2 }}
-            className="d-lg-none   position-absolute  top-0 custom-bg-main fs-3 text-white border-0"
+            className="  position-absolute  top-0 custom-bg-main fs-3 text-white border-0"
             onClick={() => setOpen(!open)}
             aria-controls="sidebar"
             aria-expanded={open}
           >
-            <RxCross1 className="fw-bold" />
+           <MdOutlineKeyboardArrowRight />
+            {/* <RxCross1 className="fw-bold" /> */}
           </button>
           {/* company */}
           <div>
-            <h4 className="d-flex gap-2 mt-3 mt-lg-4 mb-4">
+            <h4 className="d-flex gap-2 mt-4 mb-4">
               <FaRegHospital className="mt-1" /> Sms Diagnostic
             </h4>
           </div>

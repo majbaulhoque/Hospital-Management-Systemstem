@@ -55,3 +55,8 @@
     margin-top: 5px;
   }
   
+  /* @media (max-width:500px) {
+    .custom-sidebar-width {
+      width: auto;
+    }
+  } */
