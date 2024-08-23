@@ -1,6 +1,6 @@
 import "../../styles/form/index.css"
 
-const Login = () => {
+const LoginForm = () => {
     return (
       <div
         style={{ height: "100vh" }}
@@ -62,4 +62,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default LoginForm;

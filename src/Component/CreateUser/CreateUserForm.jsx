@@ -1,5 +1,5 @@
 import "../../styles/form/index.css"
-const SignUp = () => {
+const CreateUserForm = () => {
 
     return (
       <div style={{height:"100vh"}} className="d-flex container justify-content-center align-items-center">
@@ -63,5 +63,5 @@ const SignUp = () => {
     );
   };
   
-  export default SignUp;
+  export default CreateUserForm;
   
