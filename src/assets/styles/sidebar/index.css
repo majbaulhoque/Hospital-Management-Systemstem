@@ -55,8 +55,11 @@
     margin-top: 5px;
   }
   
-  /* @media (max-width:500px) {
-    .custom-sidebar-width {
-      width: auto;
+  @media (max-width:500px) {
+    .custom-position-absolute-mobile{
+      position: absolute !important;
     }
-  } */
+    .custom-position-fixed-mobile{
+      position: fixed !important;
+    }
+  }
