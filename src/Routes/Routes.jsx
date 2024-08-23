@@ -3,6 +3,7 @@ import MainLayout from '../Layout/MainLayout';
 import Login from '../Pages/Login/Login';
 import CreateUser from '../Pages/CreateUser/CreateUser';
 import Dashboard from '../Pages/Dashboard/Dashboard';
+import UserRole from '../Pages/UserRole/UserRole';
 
 
 const Routes = createBrowserRouter ([
@@ -14,6 +15,10 @@ const Routes = createBrowserRouter ([
                 path: '/',
                 element: <Dashboard/>,
             },
+            {
+                path:'/user-role',
+                element:<UserRole/>
+            }
         ]
     },
     {

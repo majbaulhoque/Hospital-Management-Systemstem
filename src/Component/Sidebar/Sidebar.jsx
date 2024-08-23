@@ -200,7 +200,7 @@ const Sidebar = () => {
               </Dropdown>
             </div>
             {/* user role */}
-            <Link className="d-flex gap-2 text-decoration-none text-white">
+            <Link to='/user-role' className="d-flex gap-2 text-decoration-none text-white">
               <FaUserPen className="mt-1" /> <p>User Role</p>
             </Link>
           </div>
