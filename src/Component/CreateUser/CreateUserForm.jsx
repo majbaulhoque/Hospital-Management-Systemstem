@@ -4,7 +4,7 @@ const CreateUserForm = () => {
     return (
       <div style={{height:"100vh"}} className="d-flex container justify-content-center align-items-center">
         <div  className=" p-3 shadow-lg rounded-3 ">
-            <h3 className="text-center mb-3 text-black">Sign  <span className="custom-text-main fw-bold">up</span></h3>
+            <h3 className="text-center mb-3 text-black">Create  <span className="custom-text-main fw-bold">User</span></h3>
             {/* form */}
           <form   className="addUserForm    d-flex justify-content-center align-items-center">
             <div className=" d-flex custom-form-width  justify-content-center  flex-column gap-3 ">
@@ -18,6 +18,17 @@ const CreateUserForm = () => {
                 name="name"
                 autoComplete="off"
                 placeholder="Enter your name"
+              />
+                {/* user name */}
+                <label htmlFor="userName">User Name <span className="text-danger">*</span></label>
+              <input
+                type="text"
+                // custom css included
+                className="form-control-custom"
+                id="userName"
+                name="userName"
+                autoComplete="off"
+                placeholder="Enter your user name"
               />
               {/* email */}
                <label htmlFor="email">Email <span className="text-danger">*</span></label>
@@ -52,6 +63,28 @@ const CreateUserForm = () => {
                 name="confirmPassword"
                 autoComplete="off"
                 placeholder="Confirm your password"
+              />
+              {/* Contact no */}
+              <label htmlFor="contactNumber">Contact Number <span className="text-danger">*</span></label>
+              <input
+                type="number"
+                // custom css included
+                className="form-control-custom"
+                id="contactNumber"
+                name="contactNumber"
+                autoComplete="off"
+                placeholder="Enter your contact number"
+              />
+              {/* NID no */}
+              <label htmlFor="nidNumber">NID Number <span className="text-danger">*</span></label>
+              <input
+                type="number"
+                // custom css included
+                className="form-control-custom"
+                id="nidNumber"
+                name="nidNumber"
+                autoComplete="off"
+                placeholder="Enter your NID number"
               />
               {/* submit button */}
               <button type="submit" className="btn custom-bg-main shadow-lg border-0 btn-primary">
