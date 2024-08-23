@@ -5,12 +5,13 @@ import "../assets/styles/sidebar/index.css"
 
 const MainLayout = () => {
   return (
-    <div className="d-lg-flex  gap-2 w-100">
-      <div className="">
-        <Sidebar />
+    <div className="  gap-2 w-100">
+      <div className="w-100 position-sticky z-3 top-0">
+      <Navbar/>
+       
       </div>
-      <div className=" w-100">
-        <Navbar/>
+      <div className="d-flex gap-2 w-100">
+         <Sidebar />
         <Outlet />
       </div>
     </div>

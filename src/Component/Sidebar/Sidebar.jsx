@@ -21,7 +21,7 @@ const Sidebar = () => {
   const [open, setOpen] = useState(true);
 
   return (
-    <div  className="position-relative custom-position-fixed-mobile z-3" style={{ top: 0, left: 0, bottom: 0 }}>
+    <div  className="position-relative custom-position-fixed-mobile  custom-z-index" style={{ top: 0, left: 0, bottom: 0 }}>
       {/* Toggle Button  */}
       {!open && (
         <button
@@ -35,7 +35,7 @@ const Sidebar = () => {
       )}
 
       {/* Sidebar Content */}
-      <Collapse in={open} className="position-relative custom-position-absolute-mobile z-2" dimension="width">
+      <Collapse in={open} className="position-relative custom-position-absolute-mobile  custom-z-index" dimension="width">
         <div
           id="sidebar"
           className="custom-sidebar-width overflow-y-scroll  text-white p-4 custom-bg-main "
@@ -54,7 +54,7 @@ const Sidebar = () => {
           </button>
           {/* company */}
           <div>
-            <h4 className="d-flex gap-2 mt-4 mb-4">
+            <h4 className="d-flex gap-2  mb-4">
               <FaRegHospital className="mt-1" />  Diagnostic CP
             </h4>
           </div>

@@ -54,12 +54,18 @@
     background-color: transparent !important;
     margin-top: 5px;
   }
-  
+
+  .custom-z-index{
+    z-index: 0;
+  }
   @media (max-width:500px) {
     .custom-position-absolute-mobile{
       position: absolute !important;
     }
     .custom-position-fixed-mobile{
       position: fixed !important;
+    }
+    .custom-z-index{
+      z-index: 999;
     }
   }

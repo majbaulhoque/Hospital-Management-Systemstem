@@ -69,8 +69,8 @@ const Cards = () => {
   return (
     <div className="row">
       {data?.map((item) => (
-        <div className="col-lg-4 col-md-6 col-12 col-xl-3 gy-3 " key={item?.id}>
-          <div className="custom-bg-main justify-content-center d-flex gap-4  p-3 rounded-3  text-white">
+        <div className="col-lg-4  col-md-6 col-12 col-xl-3 gy-3 " key={item?.id}>
+          <div className="custom-bg-main shadow-lg justify-content-center d-flex gap-4  p-3 rounded-3  text-white">
             <div className="">
               <h5>{item?.name}</h5>
               <p className="fs-4">{item?.count}+</p>
