@@ -55,13 +55,13 @@ const Sidebar = () => {
           {/* company */}
           <div>
             <h4 className="d-flex gap-2 mt-4 mb-4">
-              <FaRegHospital className="mt-1" /> Sms Diagnostic
+              <FaRegHospital className="mt-1" />  Diagnostic CP
             </h4>
           </div>
           <div className="d-flex flex-column  gap-4">
             {/* dashboard */}
             <div className="mt-1">
-            <Link to='/dashboard' className=" text-decoration-none text-white">
+            <Link to='/' className=" text-decoration-none text-white">
               <LuLayoutDashboard /> 
               <span className="ms-2 mt-2">Dashboard</span>
             </Link>
