@@ -155,7 +155,6 @@ const Sidebar = () => {
           </div>
         </div>
       </Collapse>
-     
     </div>
   );
 };
