@@ -6,7 +6,9 @@ const MainLayout = () => {
     return (
         <div className="d-flex">
             <Sidebar/>
+            <div className="p-lg-4">
             <Outlet />
+            </div>
         </div>
     );
 };

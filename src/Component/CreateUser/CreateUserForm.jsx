@@ -1,10 +1,10 @@
-import "../../styles/form/index.css"
+import "../../assets/styles/form/index.css"
 const CreateUserForm = () => {
 
     return (
       <div style={{height:"100vh"}} className="d-flex container justify-content-center align-items-center">
         <div  className=" p-3 shadow-lg rounded-3 ">
-            <h3 className="text-center mb-3 text-black">Sign  <span className="text-main fw-bold">up</span></h3>
+            <h3 className="text-center mb-3 text-black">Sign  <span className="custom-text-main fw-bold">up</span></h3>
             {/* form */}
           <form   className="addUserForm    d-flex justify-content-center align-items-center">
             <div className=" d-flex custom-form-width  justify-content-center  flex-column gap-3 ">
@@ -12,6 +12,7 @@ const CreateUserForm = () => {
               <label htmlFor="name">Name <span className="text-danger">*</span></label>
               <input
                 type="text"
+                // custom css included
                 className="form-control-custom"
                 id="name"
                 name="name"
@@ -22,7 +23,8 @@ const CreateUserForm = () => {
                <label htmlFor="email">Email <span className="text-danger">*</span></label>
               <input
                 type="email"
-                className="form-control-custom"
+                // custom css included
+                className="form-control-custom" 
                 id="email"
                 name="email"
                 autoComplete="off"
@@ -30,8 +32,10 @@ const CreateUserForm = () => {
               />
               {/* password */}
               <label htmlFor="Password">Password <span className="text-danger">*</span></label>
+              
               <input
                 type="password"
+                // custom css included
                 className="form-control-custom"
                 id="password"
                 name="password"
@@ -42,6 +46,7 @@ const CreateUserForm = () => {
                <label htmlFor="confirmPassword">Confirm Password <span className="text-danger">*</span></label>
               <input
                 type="confirmPassword"
+                // custom css included
                 className="form-control-custom"
                 id="confirmPassword"
                 name="confirmPassword"
@@ -49,14 +54,14 @@ const CreateUserForm = () => {
                 placeholder="Confirm your password"
               />
               {/* submit button */}
-              <button type="submit" className="btn bg-main shadow-lg border-0 btn-primary">
+              <button type="submit" className="btn custom-bg-main shadow-lg border-0 btn-primary">
                Sign up
               </button>
             </div>
           </form>
           <div className="d-flex justify-content-center gap-2 align-items-center">
             <p className="text-center mt-3">Already have account? </p>
-            <span className="text-main fw-medium">Sign in</span>
+            <span className="custom-text-main fw-medium">Sign in</span>
           </div>
         </div>
       </div>
