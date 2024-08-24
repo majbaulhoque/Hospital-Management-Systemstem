@@ -4,16 +4,16 @@
     width: 280px;
   }
   .custom-dropDown > button {
-    background-color: rgb(52, 41, 41);
+    background-color: #001529;
     border: none;
   }
   .custom-dropDown > button:hover {
-    background-color: rgb(52, 41, 41);
-    /* background-color: rgb(52, 41, 41); */
+    background-color: #001529;
+    /* background-color: #001529; */
     border: none;
   }
   .custom-dropDown > button:focus {
-    background-color: rgb(52, 41, 41);
+    background-color: #001529;
   }
   
   .custom-dropDown {
@@ -34,7 +34,7 @@
   }
   
   .custom-dropdown-menu {
-    background-color: rgb(52, 41, 41) !important;
+    background-color: #001529 !important;
     padding: 0px !important;
     color: white !important;
     overflow: hidden;
