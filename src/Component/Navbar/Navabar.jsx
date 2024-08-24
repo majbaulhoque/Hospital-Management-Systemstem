@@ -64,6 +64,7 @@ const Navbar = () => {
                 <FaInfoCircle />Your Info
               </div>
               <div
+              onClick={() => navigate('/create-user')}
                 role="button"
                 className="d-flex align-items-center gap-2 justify-content-center custom-btn-hover text-center"
               >
