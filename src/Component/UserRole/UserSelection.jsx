@@ -21,11 +21,11 @@ const UserSelection = () => {
   };
   return (
     <div className="mt-3">
-      <h5 className="p-3 custom-border rounded-3 d-flex align-items-center gap-2">
+      <h5 className="p-3 bg-secondary bg-opacity-25 rounded-3 d-flex align-items-center gap-2">
         <IoSettingsOutline /> User role settings
       </h5>
       {/* User Role */}
-      <div className="d-flex w-25 mt-3 justify-content-center align-items-center gap-2">
+      <div className="d-flex w-lg-25 mt-3 justify-content-center align-items-center gap-2">
         <label className="d-flex text-nowrap" htmlFor="userRole">
           User role <span className="text-danger">*</span>
         </label>
@@ -45,7 +45,7 @@ const UserSelection = () => {
       </div>
 
       {/* User Name */}
-      <div className="d-flex w-25 mt-3 justify-content-center align-items-center gap-2">
+      <div className="d-flex w-lg-25 mt-3 justify-content-center align-items-center gap-2">
         <label className="d-flex text-nowrap" htmlFor="userName">
           User name <span className="text-danger">*</span>
         </label>
