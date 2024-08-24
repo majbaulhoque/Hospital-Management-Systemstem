@@ -86,7 +86,7 @@ const Sidebar = ({setOpen , open}) => {
               <Dropdown bsPrefix="custom-dropDown">
                 <Dropdown.Toggle id="dropdown-basic">Doctors</Dropdown.Toggle>
                 <Dropdown.Menu className="custom-dropdown-menu">
-                  <Dropdown.Item className="" href="#/Item1-1">
+                  <Dropdown.Item className="" href="/doctor-management">
                     Doctor Management
                   </Dropdown.Item>
                   <Dropdown.Item className="mt-3" href="#/Item1-2">

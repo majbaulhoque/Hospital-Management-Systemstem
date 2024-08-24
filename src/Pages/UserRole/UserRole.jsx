@@ -1,9 +1,12 @@
+import UserRoleSettings from "../../Component/UserRole/UserRoleSettings";
+import UserSelection from "../../Component/UserRole/UserSelection";
 
 
 const UserRole = () => {
     return (
-        <div>
-            this is user role
+        <div className="container">
+          <UserSelection/>
+          <UserRoleSettings/>
         </div>
     );
 };

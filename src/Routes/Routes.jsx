@@ -4,6 +4,7 @@ import Login from '../Pages/Login/Login';
 import CreateUser from '../Pages/CreateUser/CreateUser';
 import Dashboard from '../Pages/Dashboard/Dashboard';
 import UserRole from '../Pages/UserRole/UserRole';
+import DoctorManagement from '../Pages/DoctorManagement/DoctorManagement';
 
 
 const Routes = createBrowserRouter ([
@@ -18,6 +19,10 @@ const Routes = createBrowserRouter ([
             {
                 path:'/user-role',
                 element:<UserRole/>
+            },
+            {
+                path:'doctor-management',
+                element:<DoctorManagement/>
             }
         ]
     },
