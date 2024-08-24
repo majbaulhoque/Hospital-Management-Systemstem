@@ -6,7 +6,7 @@ const LoginForm = () => {
         style={{ height: "100vh" }}
         className="d-flex container justify-content-center align-items-center"
       >
-        <div className=" p-3 shadow-lg ">
+        <div className=" p-3  ">
           <h3 className="text-center mb-3 "><span className="custom-text-main fw-bold">Login</span></h3>
           {/* form */}
           <form className="addUserForm    d-flex justify-content-center align-items-center">
