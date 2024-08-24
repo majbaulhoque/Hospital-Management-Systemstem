@@ -16,6 +16,16 @@
 .custom-outlet-size{
   width: calc(100% - 280px);
 }
+.custom-btn-hover{
+margin-top: 10px;
+}
+.custom-btn-hover:hover{
+ background-color: #001529 !important;
+ color: white !important;
+ border-radius: 5px;
+ padding: 3px;
+ margin-top: 10px;
+}
 @media (max-width:800px) {
   .custom-outlet-size{
     width: 100%;
