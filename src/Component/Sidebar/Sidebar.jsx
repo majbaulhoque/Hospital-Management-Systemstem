@@ -1,29 +1,31 @@
-
 import { useState } from "react";
 import { RiMenu3Fill } from "react-icons/ri";
 import { LuLayoutDashboard } from "react-icons/lu";
-import {  FaUserDoctor, FaUserPen, FaChrome } from "react-icons/fa6";
-import { FaParking } from "react-icons/fa";
-import { RxCross1 } from "react-icons/rx";
+import { FaUserDoctor, FaUserPen, FaChrome } from "react-icons/fa6";
+import { FaParking, FaRegHospital } from "react-icons/fa";
 import {
   MdOutlineEventAvailable,
+  MdOutlineKeyboardArrowRight,
   MdOutlineSupervisorAccount,
 } from "react-icons/md";
 import { TbReport } from "react-icons/tb";
 import Dropdown from "react-bootstrap/Dropdown";
 import Collapse from "react-bootstrap/Collapse";
-import "../../styles/sidebar/index.css"
+// custom css included.all then class where custom word included are custom class
+import "../../assets/styles/sidebar/index.css";
+import { Link } from "react-router-dom";
+
 
 const Sidebar = () => {
   // toggle state
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   return (
-    <div className="position-relative">
-      {/* Toggle Button for small device */}
+    <div className="position-fixed z-3">
+      {/* Toggle Button  */}
       {!open && (
         <button
-          className="d-lg-none  mb-3 border-0"
+          className=" mb-3 ms-3 mt-3 border-0"
           onClick={() => setOpen(!open)}
           aria-controls="sidebar"
           aria-expanded={open}
@@ -33,54 +35,77 @@ const Sidebar = () => {
       )}
 
       {/* Sidebar Content */}
-      <Collapse in={open} className="position-relative" dimension="width">
-      
+      <Collapse in={open} className="position-absolute z-2" dimension="width">
         <div
           id="sidebar"
-          className="custom-sidebar-width  text-white p-4 bg-main d-lg-block"
+          className="custom-sidebar-width  text-white p-4 custom-bg-main "
           style={{ minHeight: "100vh" }}
         >
-          {/* Toggle cross Button for small device */}
-        <button
-        style={{right:2}}
-          className="d-lg-none   position-absolute  top-0 bg-main fs-3 text-white border-0"
-          onClick={() => setOpen(!open)}
-          aria-controls="sidebar"
-          
-          aria-expanded={open}
-        >
-          <RxCross1 className="fw-bold"/>
-        </button>
-        {/* dashboard */}
+          {/* Toggle cross Button  */}
+          <button
+            style={{ right: 2 }}
+            className="  position-absolute  top-0 custom-bg-main fs-3 text-white border-0"
+            onClick={() => setOpen(!open)}
+            aria-controls="sidebar"
+            aria-expanded={open}
+          >
+           <MdOutlineKeyboardArrowRight />
+            {/* <RxCross1 className="fw-bold" /> */}
+          </button>
+          {/* company */}
           <div>
-            <h4 className="d-flex gap-3 mt-3 mt-lg-4 mb-4">
-              <LuLayoutDashboard /> Dashboard
+            <h4 className="d-flex gap-2 mt-4 mb-4">
+              <FaRegHospital className="mt-1" /> Sms Diagnostic
             </h4>
-         {/* doctors */}
           </div>
-          <div className="d-flex flex-column gap-4">
+          <div className="d-flex flex-column  gap-4">
+            {/* dashboard */}
+            <div className="mt-1">
+            <Link to='/dashboard' className=" text-decoration-none text-white">
+              <LuLayoutDashboard /> 
+              <span className="ms-2 mt-2">Dashboard</span>
+            </Link>
+            </div>
+            {/* doctor */}
             <div className="d-flex ">
               <FaUserDoctor className="mt-2" />
               <Dropdown bsPrefix="custom-dropDown">
                 <Dropdown.Toggle id="dropdown-basic">Doctors</Dropdown.Toggle>
-                <Dropdown.Menu className="custom-dropdown-menu" >
-                  <Dropdown.Item className=""  href="#/Item1-1">Doctor Management</Dropdown.Item>
-                  <Dropdown.Item className="mt-3"  href="#/Item1-2">Commission Tracking</Dropdown.Item>
-                  <Dropdown.Item className="mt-3"  href="#/Item1-3">Patient Referral Tracking</Dropdown.Item>
-                  <Dropdown.Item className="mt-3"  href="#/Item1-3">Doctor Ledge</Dropdown.Item>
+                <Dropdown.Menu className="custom-dropdown-menu">
+                  <Dropdown.Item className="" href="#/Item1-1">
+                    Doctor Management
+                  </Dropdown.Item>
+                  <Dropdown.Item className="mt-3" href="#/Item1-2">
+                    Commission Tracking
+                  </Dropdown.Item>
+                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                    Patient Referral Tracking
+                  </Dropdown.Item>
+                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                    Doctor Ledge
+                  </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </div>
+
             {/* patient */}
             <div className="d-flex ">
-              <FaParking  className="mt-2"  />
+              <FaParking className="mt-2" />
               <Dropdown bsPrefix="custom-dropDown">
                 <Dropdown.Toggle id="dropdown-basic">Patient</Dropdown.Toggle>
                 <Dropdown.Menu className="custom-dropdown-menu">
-                  <Dropdown.Item className="" href="#/Item1-1">Patient Registration</Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-2">Appointment Scheduling</Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">Patient History</Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">Payment Tracking</Dropdown.Item>
+                  <Dropdown.Item className="" href="#/Item1-1">
+                    Patient Registration
+                  </Dropdown.Item>
+                  <Dropdown.Item className="mt-3" href="#/Item1-2">
+                    Appointment Scheduling
+                  </Dropdown.Item>
+                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                    Patient History
+                  </Dropdown.Item>
+                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                    Payment Tracking
+                  </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </div>
@@ -88,14 +113,20 @@ const Sidebar = () => {
             <div className="d-flex ">
               <MdOutlineEventAvailable className="mt-2" />
               <Dropdown bsPrefix="custom-dropDown">
-                <Dropdown.Toggle id="dropdown-basic">
-                  Lab Test
-                </Dropdown.Toggle>
+                <Dropdown.Toggle id="dropdown-basic">Lab Test</Dropdown.Toggle>
                 <Dropdown.Menu className="custom-dropdown-menu">
-                  <Dropdown.Item className="" href="#/Item1-1">Test Management</Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-2">Invoice Generation</Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">Test Result Input</Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">Report Generation</Dropdown.Item>
+                  <Dropdown.Item className="" href="#/Item1-1">
+                    Test Management
+                  </Dropdown.Item>
+                  <Dropdown.Item className="mt-3" href="#/Item1-2">
+                    Invoice Generation
+                  </Dropdown.Item>
+                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                    Test Result Input
+                  </Dropdown.Item>
+                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                    Report Generation
+                  </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </div>
@@ -105,11 +136,21 @@ const Sidebar = () => {
               <Dropdown bsPrefix="custom-dropDown">
                 <Dropdown.Toggle id="dropdown-basic">Accounts</Dropdown.Toggle>
                 <Dropdown.Menu className="custom-dropdown-menu">
-                  <Dropdown.Item className="" href="#/Item1-1">Income Management</Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-2">Expense Management</Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">Due Collection</Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">Doctor Commission Payment</Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">Ledger Management</Dropdown.Item>
+                  <Dropdown.Item className="" href="#/Item1-1">
+                    Income Management
+                  </Dropdown.Item>
+                  <Dropdown.Item className="mt-3" href="#/Item1-2">
+                    Expense Management
+                  </Dropdown.Item>
+                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                    Due Collection
+                  </Dropdown.Item>
+                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                    Doctor Commission Payment
+                  </Dropdown.Item>
+                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                    Ledger Management
+                  </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </div>
@@ -119,11 +160,21 @@ const Sidebar = () => {
               <Dropdown bsPrefix="custom-dropDown">
                 <Dropdown.Toggle id="dropdown-basic">Report</Dropdown.Toggle>
                 <Dropdown.Menu className="custom-dropdown-menu">
-                  <Dropdown.Item className="" href="#/Item1-1">Profit/Loss Tracking</Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-2">Sales Tracking</Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">Expense Tracking</Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">Commission Tracking</Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">Income Statement</Dropdown.Item>
+                  <Dropdown.Item className="" href="#/Item1-1">
+                    Profit/Loss Tracking
+                  </Dropdown.Item>
+                  <Dropdown.Item className="mt-3" href="#/Item1-2">
+                    Sales Tracking
+                  </Dropdown.Item>
+                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                    Expense Tracking
+                  </Dropdown.Item>
+                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                    Commission Tracking
+                  </Dropdown.Item>
+                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                    Income Statement
+                  </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </div>
@@ -133,25 +184,25 @@ const Sidebar = () => {
               <Dropdown bsPrefix="custom-dropDown">
                 <Dropdown.Toggle id="dropdown-basic">HR</Dropdown.Toggle>
                 <Dropdown.Menu className="custom-dropdown-menu">
-                  <Dropdown.Item className="" href="#/Item1-1">Employee Management</Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-2">Attendance Tracking</Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">Payroll Management</Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">Performance Tracking</Dropdown.Item>
+                  <Dropdown.Item className="" href="#/Item1-1">
+                    Employee Management
+                  </Dropdown.Item>
+                  <Dropdown.Item className="mt-3" href="#/Item1-2">
+                    Attendance Tracking
+                  </Dropdown.Item>
+                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                    Payroll Management
+                  </Dropdown.Item>
+                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                    Performance Tracking
+                  </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </div>
             {/* user role */}
-            <div className="d-flex ">
-              <FaUserPen className="mt-2" />
-              <Dropdown bsPrefix="custom-dropDown">
-                <Dropdown.Toggle id="dropdown-basic">User Role</Dropdown.Toggle>
-                <Dropdown.Menu className="custom-dropdown-menu">
-                  <Dropdown.Item className="" href="#/Item1-1">Item1</Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-2">Item2</Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">Item3</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </div>
+            <Link className="d-flex gap-2 text-decoration-none text-white">
+              <FaUserPen className="mt-1" /> <p>User Role</p>
+            </Link>
           </div>
         </div>
       </Collapse>
