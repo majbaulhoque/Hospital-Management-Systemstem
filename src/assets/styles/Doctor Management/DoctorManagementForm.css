@@ -1,0 +1,58 @@
+.date-container {
+    position: relative;
+}
+
+.date-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.date-title {
+    position: absolute;
+    top: -12px;
+    left: 10px;
+    color: black;
+    background-color: white; /* Prevent overlapping text from being hidden */
+    padding: 0 5px; /* Add padding to avoid text clashing with background */
+    z-index: 2;
+}
+
+
+.date-picker {
+    border-color: #dee2e6;
+    width: 360px;
+    height: 58px;
+    border-radius: 8px;
+    /* z-index: 1; */
+}
+
+
+
+.gender-input{
+    width: 350px;
+    height: 56px;
+    border-radius: 8px;
+    border-color: #dee2e6;
+}
+
+.gender-container{
+    position: relative;
+}
+
+.gender-icon{
+    position: absolute;
+    margin-left: -35px;
+    margin-top: 10px;
+}
+
+@media (max-width: 576px) {
+    .date-picker {
+        height: 60px; /* Adjust height */
+        width: 342px; /* Ensure full width */
+    }
+
+    .date-icon {
+        right: 5px; /* Adjust icon position */
+    }
+}
