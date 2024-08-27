@@ -86,16 +86,16 @@ const Sidebar = ({setOpen , open}) => {
               <Dropdown bsPrefix="custom-dropDown">
                 <Dropdown.Toggle id="dropdown-basic">Doctors</Dropdown.Toggle>
                 <Dropdown.Menu className="custom-dropdown-menu">
-                  <Dropdown.Item className="" href="/doctor-management">
+                  <Dropdown.Item className="" href="/doctors/doctor-management">
                     Doctor Management
                   </Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-2">
+                  <Dropdown.Item className="mt-3" href="/doctors/commission-tracking">
                     Commission Tracking
                   </Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                  <Dropdown.Item className="mt-3" href="/doctors/patient-referral-tracking">
                     Patient Referral Tracking
                   </Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                  <Dropdown.Item className="mt-3" href="/doctors/doctor-ledger">
                     Doctor Ledge
                   </Dropdown.Item>
                 </Dropdown.Menu>
@@ -108,16 +108,16 @@ const Sidebar = ({setOpen , open}) => {
               <Dropdown bsPrefix="custom-dropDown">
                 <Dropdown.Toggle id="dropdown-basic">Patient</Dropdown.Toggle>
                 <Dropdown.Menu className="custom-dropdown-menu">
-                  <Dropdown.Item className="" href="#/Item1-1">
+                  <Dropdown.Item className="" href="/patient/patient-registration">
                     Patient Registration
                   </Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-2">
+                  <Dropdown.Item className="mt-3" href="/patient/appointment-scheduling">
                     Appointment Scheduling
                   </Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                  <Dropdown.Item className="mt-3" href="/patient/patient-history">
                     Patient History
                   </Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                  <Dropdown.Item className="mt-3" href="/patient/payment-tracking">
                     Payment Tracking
                   </Dropdown.Item>
                 </Dropdown.Menu>
@@ -129,16 +129,16 @@ const Sidebar = ({setOpen , open}) => {
               <Dropdown bsPrefix="custom-dropDown">
                 <Dropdown.Toggle id="dropdown-basic">Lab Test</Dropdown.Toggle>
                 <Dropdown.Menu className="custom-dropdown-menu">
-                  <Dropdown.Item className="" href="#/Item1-1">
+                  <Dropdown.Item className="" href="/lab-test/test-management">
                     Test Management
                   </Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-2">
+                  <Dropdown.Item className="mt-3" href="/lab-test/invoice-generation">
                     Invoice Generation
                   </Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                  <Dropdown.Item className="mt-3" href="/lab-test/test-result-input">
                     Test Result Input
                   </Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                  <Dropdown.Item className="mt-3"href="/lab-test/report-generation">
                     Report Generation
                   </Dropdown.Item>
                 </Dropdown.Menu>
@@ -150,19 +150,19 @@ const Sidebar = ({setOpen , open}) => {
               <Dropdown bsPrefix="custom-dropDown">
                 <Dropdown.Toggle id="dropdown-basic">Accounts</Dropdown.Toggle>
                 <Dropdown.Menu className="custom-dropdown-menu">
-                  <Dropdown.Item className="" href="#/Item1-1">
+                  <Dropdown.Item className="" href="/accounts/income-management">
                     Income Management
                   </Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-2">
+                  <Dropdown.Item className="mt-3" href="/accounts/expense-management">
                     Expense Management
                   </Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                  <Dropdown.Item className="mt-3" href="/accounts/due-collection">
                     Due Collection
                   </Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                  <Dropdown.Item className="mt-3" href="/accounts/doctor-commission-payment">
                     Doctor Commission Payment
                   </Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                  <Dropdown.Item className="mt-3" href="/accounts/ledger-management">
                     Ledger Management
                   </Dropdown.Item>
                 </Dropdown.Menu>
@@ -174,19 +174,19 @@ const Sidebar = ({setOpen , open}) => {
               <Dropdown bsPrefix="custom-dropDown">
                 <Dropdown.Toggle id="dropdown-basic">Report</Dropdown.Toggle>
                 <Dropdown.Menu className="custom-dropdown-menu">
-                  <Dropdown.Item className="" href="#/Item1-1">
+                  <Dropdown.Item className="" href="/report/profit-loss-tracking">
                     Profit/Loss Tracking
                   </Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-2">
+                  <Dropdown.Item className="mt-3" href="/report/sales-tracking">
                     Sales Tracking
                   </Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                  <Dropdown.Item className="mt-3" href="/report/expense-tracking">
                     Expense Tracking
                   </Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                  <Dropdown.Item className="mt-3" href="/report/commission-tracking">
                     Commission Tracking
                   </Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                  <Dropdown.Item className="mt-3" href="/report/income-statement">
                     Income Statement
                   </Dropdown.Item>
                 </Dropdown.Menu>
@@ -198,16 +198,16 @@ const Sidebar = ({setOpen , open}) => {
               <Dropdown bsPrefix="custom-dropDown">
                 <Dropdown.Toggle id="dropdown-basic">HR</Dropdown.Toggle>
                 <Dropdown.Menu className="custom-dropdown-menu">
-                  <Dropdown.Item className="" href="#/Item1-1">
+                  <Dropdown.Item className="" href="/hr/employee-management">
                     Employee Management
                   </Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-2">
+                  <Dropdown.Item className="mt-3" href="/hr/attendance-tracking">
                     Attendance Tracking
                   </Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                  <Dropdown.Item className="mt-3" href="/hr/payroll-management">
                     Payroll Management
                   </Dropdown.Item>
-                  <Dropdown.Item className="mt-3" href="#/Item1-3">
+                  <Dropdown.Item className="mt-3" href="/hr/performance-tracking">
                     Performance Tracking
                   </Dropdown.Item>
                 </Dropdown.Menu>

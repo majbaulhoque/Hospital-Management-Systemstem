@@ -8,7 +8,7 @@ const CreateUserForm = () => {
   const [image, setImage] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
   console.log(image);
-  // console.log(previewUrl);
+  console.log(previewUrl);
 
   // handle image upload
   const handleImageUpload = (event) => {
