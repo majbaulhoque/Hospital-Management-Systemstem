@@ -13,7 +13,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import Collapse from "react-bootstrap/Collapse";
 // custom css included.all then class where custom word included are custom class
 import "../../assets/styles/sidebar/index.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = ({setOpen , open}) => {
   // toggle state
@@ -75,10 +75,10 @@ const Sidebar = ({setOpen , open}) => {
           <div className="d-flex flex-column  gap-4">
             {/* dashboard */}
             <div className="mt-1">
-              <Link to="/" className=" text-decoration-none text-white">
+              <NavLink to="/" className=" text-decoration-none text-white">
                 <LuLayoutDashboard  />
                 <span className="ms-2 mt-2">Dashboard</span>
-              </Link>
+              </NavLink>
             </div>
             {/* doctor */}
             <div className="d-flex ">
@@ -214,12 +214,12 @@ const Sidebar = ({setOpen , open}) => {
               </Dropdown>
             </div>
             {/* user role */}
-            <Link
+            <NavLink
               to="/user-role"
               className="d-flex gap-2 text-decoration-none text-white"
             >
               <FaUserPen className="mt-1" /> <p>User Role</p>
-            </Link>
+            </NavLink>
           </div>
         </div>
       </Collapse>

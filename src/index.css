@@ -29,6 +29,9 @@ margin-top: 10px;
 .form-check .form-check-input{
   border: 1px solid #cbcbcc;
 }
+.active{
+ border-radius: 5px;
+}
 @media (max-width:800px) {
   .custom-outlet-size{
     width: 100%;

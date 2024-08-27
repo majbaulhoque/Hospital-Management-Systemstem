@@ -42,7 +42,7 @@ const LoginForm = () => {
               autoComplete="off"
               placeholder="Enter your Password"
             />
-             <div className="mb-3 form-check">
+             <div className="mb-3 d-flex align-items-center gap-2 form-check">
                             <input
                                 type="checkbox"
                                 className="form-check-input"
@@ -63,10 +63,10 @@ const LoginForm = () => {
             </button>
           </div>
         </form>
-        <div className="d-flex justify-content-center gap-2 align-items-center">
+        {/* <div className="d-flex justify-content-center gap-2 align-items-center">
           <p className="text-center mt-3">Don not have Account? </p>
           <span className="custom-text-main fw-medium">Sign Up</span>
-        </div>
+        </div> */}
       </div>
     </div>
   );
