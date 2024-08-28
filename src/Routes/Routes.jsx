@@ -8,7 +8,6 @@ import DoctorManagement from "../Pages/DoctorManagement/DoctorManagement";
 import CommissionTracking from "../Pages/Doctors/CommissionTracking";
 import PatientReferralTracking from "../Pages/Doctors/PatientReferralTracking";
 import DoctorLedger from "../Pages/Doctors/DoctorLedger";
-import TestManagement from "../Pages/LabTest/TestManagement";
 import InvoiceGeneration from "../Pages/LabTest/InvoiceGeneration";
 import TestResultInput from "../Pages/LabTest/TestResultInput";
 import ReportGeneration from "../Pages/LabTest/ReportGeneration";
@@ -30,6 +29,8 @@ import EmployeeManagement from "../Pages/HR/EmployeeManagement";
 import AttendanceTracking from "../Pages/HR/AttendanceTracking";
 import PayrollManagement from "../Pages/HR/PayrollManagement";
 import PerformanceTracking from "../Pages/HR/PerformanceTracking";
+import AddNewTest from "../Pages/LabTest/TestManagement/AddNewTest";
+import ViewAllTest from "../Pages/LabTest/TestManagement/ViewAllTest";
 
 const Routes = createBrowserRouter([
   {
@@ -64,10 +65,6 @@ const Routes = createBrowserRouter([
 
       // lab test
       {
-        path: "lab-test/test-management",
-        element: <TestManagement />,
-      },
-      {
         path: "lab-test/invoice-generation",
         element: <InvoiceGeneration />,
       },
@@ -78,6 +75,16 @@ const Routes = createBrowserRouter([
       {
         path: "lab-test/report-generation",
         element: <ReportGeneration />,
+      },
+
+      // lab test/test management
+      {
+        path: "/lab-test/test-management/add-new-test",
+        element: <AddNewTest />,
+      },
+      {
+        path: "/lab-test/test-management/view-all-test",
+        element: <ViewAllTest />,
       },
 
       // patient
