@@ -1,3 +1,8 @@
+.doctor-management-form {
+    /* background-color: rgb(255, 255, 255); */
+    background-color: bisque;
+    box-shadow: 2px 6px 100px wheat;
+}
 .date-container {
     position: relative;
 }
@@ -8,20 +13,11 @@
     align-items: center;
 }
 
-.date-title {
-    position: absolute;
-    top: -12px;
-    left: 10px;
-    color: black;
-    background-color: white; /* Prevent overlapping text from being hidden */
-    padding: 0 5px; /* Add padding to avoid text clashing with background */
-    z-index: 2;
-}
 
 
 .date-picker {
     border-color: #dee2e6;
-    width: 360px;
+    width: 340px;
     height: 58px;
     border-radius: 8px;
     /* z-index: 1; */
@@ -46,13 +42,41 @@
     margin-top: 10px;
 }
 
-@media (max-width: 576px) {
+.blood-group{
+    height: 57px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+@media (max-width: 768px) {
     .date-picker {
         height: 60px; /* Adjust height */
-        width: 342px; /* Ensure full width */
+        width: 330px; /* Ensure full width */
     }
 
     .date-icon {
         right: 5px; /* Adjust icon position */
     }
 }
+
+@media (max-width: 576px) {
+    .date-picker {
+        height: 60px; /* Adjust height */
+        width: 310px; /* Ensure full width */
+    }
+
+    .date-icon {
+        right: 5px; /* Adjust icon position */
+    }
+}
+
