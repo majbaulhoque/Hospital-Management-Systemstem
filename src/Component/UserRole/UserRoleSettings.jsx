@@ -62,7 +62,7 @@ const CheckboxesExample = () => {
     setChildChecked((prev) => {
       const updated = {};
       for (let key in prev) {
-        updated[key] = !newChecked;
+        updated[key] = !newChecked;           
       }
       return updated;
     });
