@@ -1,7 +1,9 @@
 import TestForm from "../../../Component/LabTest/TestManagement/AddNewTest/TestForm";
 const AddNewTest = () => {
   return (
-    <TestForm />
+    <div>
+      <TestForm />
+    </div>
   );
 };
 

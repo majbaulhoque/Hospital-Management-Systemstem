@@ -18,7 +18,7 @@ const TestForm = () => {
     <div className="container mt-5 mb-5">
       <Card className="p-4 shadow-sm rounded">
         <Card.Body>
-          <h4 className="col-lg-3 col-8 mx-auto text-center py-2 rounded-2 mb-5 bg-secondary bg-opacity-25">
+          <h4 className="col-lg-3 col-9 mx-auto text-center py-2 rounded-2 mb-5 bg-secondary bg-opacity-25">
             Create Test Attributes
           </h4>
           <Form onSubmit={handleSubmit(onSubmit)}>

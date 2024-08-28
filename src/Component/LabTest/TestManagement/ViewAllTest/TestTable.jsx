@@ -26,7 +26,7 @@ const TestTable = () => {
             <td>{test.code}</td>
             <td>{test.name}</td>
             <td>{test.price}</td>
-            <td>
+            <td className='d-flex gap-3 justify-content-center'>
               <Button variant="primary" size="sm" className="mr-2">View Details</Button>
               <Button variant="warning" size="sm" className="mr-2">Edit</Button>
               <Button variant="danger" size="sm">Delete</Button>
