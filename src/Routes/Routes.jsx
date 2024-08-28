@@ -32,6 +32,7 @@ import PerformanceTracking from "../Pages/HR/PerformanceTracking";
 import AddNewTest from "../Pages/LabTest/TestManagement/AddNewTest";
 import ViewAllTest from "../Pages/LabTest/TestManagement/ViewAllTest";
 import ViewTestDetails from "../Pages/LabTest/TestManagement/ViewTestDetails";
+import EditTestForm from "../Component/LabTest/TestManagement/EditTestDetails/EditTestForm";
 
 const Routes = createBrowserRouter([
   {
@@ -90,6 +91,10 @@ const Routes = createBrowserRouter([
       {
         path: "/lab-test/view-test-details/:id",
         element: <ViewTestDetails />,
+      },
+      {
+        path: "/lab-test/edit-test-details/:id",
+        element: <EditTestForm/>,
       },
 
       // patient
