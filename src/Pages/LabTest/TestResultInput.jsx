@@ -1,11 +1,11 @@
-
+import ResultInputForm from "../../Component/LabTest/TestResultInput/ResultInputForm";
 
 const TestResultInput = () => {
-    return (
-        <div>
-            this is test result input
-        </div>
-    );
+  return (
+    <div>
+      <ResultInputForm />
+    </div>
+  );
 };
 
 export default TestResultInput;
