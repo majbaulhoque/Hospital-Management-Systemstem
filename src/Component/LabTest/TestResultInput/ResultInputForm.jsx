@@ -1,5 +1,3 @@
-
-
 import { useForm } from "react-hook-form";
 import { Form, Button, Card, Row, Col } from "react-bootstrap";
 import FormInput from "../../From/FormInput";
@@ -14,12 +12,18 @@ const ResultInputForm = () => {
   };
 
   return (
-    <div className="container mt-5">
-      <Card className="p-4 shadow-sm rounded">
-        <Card.Body>
-          <h4 className="col-lg-3 col-9 mx-auto text-center py-2 rounded-2 mb-5 bg-secondary bg-opacity-25">
+    <div className="container mt-5 mb-5">
+      <Card className=" shadow-md rounded">
+        <Card.Header
+          as="h5"
+          className="custom-bg-main text-white text-center py-3 rounded-top"
+        >
+         Test Result Input
+        </Card.Header>
+        <Card.Body className="p-4">
+          {/* <h4 className="col-lg-3 col-9 mx-auto text-center py-2 rounded-2 mb-5 bg-secondary bg-opacity-25">
             Result Input Details
-          </h4>
+          </h4> */}
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Row>
               <Col md={6}>
@@ -146,7 +150,6 @@ const ResultInputForm = () => {
               <Col md={6}>
                 <FormInput
                   name="authorizedBy"
-                  
                   control={control}
                   label="Authorized By"
                   placeholder="Name or ID of the person authorizing the result"

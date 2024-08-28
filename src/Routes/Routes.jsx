@@ -31,6 +31,7 @@ import PayrollManagement from "../Pages/HR/PayrollManagement";
 import PerformanceTracking from "../Pages/HR/PerformanceTracking";
 import AddNewTest from "../Pages/LabTest/TestManagement/AddNewTest";
 import ViewAllTest from "../Pages/LabTest/TestManagement/ViewAllTest";
+import ViewTestDetails from "../Pages/LabTest/TestManagement/ViewTestDetails";
 
 const Routes = createBrowserRouter([
   {
@@ -85,6 +86,10 @@ const Routes = createBrowserRouter([
       {
         path: "/lab-test/test-management/view-all-test",
         element: <ViewAllTest />,
+      },
+      {
+        path: "/lab-test/view-test-details/:id",
+        element: <ViewTestDetails />,
       },
 
       // patient

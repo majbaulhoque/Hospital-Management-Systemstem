@@ -16,14 +16,20 @@ const TestForm = () => {
 
   return (
     <div className="container mt-5 mb-5">
-      <Card className="p-4 shadow-sm rounded">
-        <Card.Body>
-          <h4 className="col-lg-3 col-9 mx-auto text-center py-2 rounded-2 mb-5 bg-secondary bg-opacity-25">
+      <Card className=" shadow-sm rounded">
+        <Card.Header
+          as="h5"
+          className="custom-bg-main text-white text-center py-3 rounded-top"
+        >
+           Create New Test
+        </Card.Header>
+        <Card.Body className="p-4">
+          {/* <h4 className="col-lg-3 col-9 mx-auto text-center py-2 rounded-2 mb-5 bg-secondary bg-opacity-25">
             Create Test Attributes
-          </h4>
+          </h4> */}
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Row className="mb-3">
-                {/* test id */}
+              {/* test id */}
               <Form.Group as={Col} md={6} controlId="testId">
                 <Form.Label>Test ID</Form.Label>
                 <Form.Control
@@ -57,7 +63,7 @@ const TestForm = () => {
                 )}
               </Form.Group>
             </Row>
-            
+
             <Row className="mb-3">
               <Form.Group as={Col} md={6} controlId="testCategory">
                 {/* test category */}
@@ -97,7 +103,7 @@ const TestForm = () => {
             </Row>
 
             <Form.Group className="mb-3" controlId="testDescription">
-                {/* test description */}
+              {/* test description */}
               <Form.Label>Test Description</Form.Label>
               <Form.Control
                 as="textarea"
@@ -133,7 +139,7 @@ const TestForm = () => {
                   </Form.Control.Feedback>
                 )}
               </Form.Group>
-               {/* preparation required */}
+              {/* preparation required */}
               <Form.Group as={Col} md={6} controlId="preparationRequired">
                 <Form.Label>Preparation Required</Form.Label>
                 <Form.Control
@@ -153,7 +159,7 @@ const TestForm = () => {
             </Row>
 
             <Row className="mb-3">
-                {/* test price */}
+              {/* test price */}
               <Form.Group as={Col} md={6} controlId="testPrice">
                 <Form.Label>Test Price</Form.Label>
                 <Form.Control
@@ -229,7 +235,7 @@ const TestForm = () => {
             </Row>
 
             <Form.Group className="mb-3" controlId="associatedEquipment">
-                {/* Associated Equipment */}
+              {/* Associated Equipment */}
               <Form.Label>Associated Equipment</Form.Label>
               <Form.Control
                 type="text"
@@ -247,7 +253,7 @@ const TestForm = () => {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="labTechnician">
-                {/* Lab Technician Assigned */}
+              {/* Lab Technician Assigned */}
               <Form.Label>Lab Technician Assigned</Form.Label>
               <Form.Control
                 type="text"
@@ -265,7 +271,7 @@ const TestForm = () => {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="testStatus">
-                {/* Test Status */}
+              {/* Test Status */}
               <Form.Label>Test Status</Form.Label>
               <Form.Control
                 as="select"
