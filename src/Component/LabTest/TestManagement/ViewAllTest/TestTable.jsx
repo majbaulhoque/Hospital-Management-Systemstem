@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { Button, Table } from "react-bootstrap";
 import { AiOutlineEdit } from "react-icons/ai";
 import { GrView } from "react-icons/gr";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import DeleteModal from "./DeleteModal";
-import { useState } from "react";
+// import DeleteModal from "./DeleteModal";
+// import { useState } from "react";
 
 const TestTable = () => {
   const [modalShow, setModalShow] = useState(false);
@@ -39,7 +41,7 @@ const TestTable = () => {
               <Button
                 variant="primary"
                 size="sm"
-                className="mr-2 d-flex align-items-center gap-2"
+                className="mr-2 d-flex custom-bg-main border-0 align-items-center gap-2"
               >
                 <GrView />
                 View Details
@@ -69,10 +71,10 @@ const TestTable = () => {
       </tbody>
     </Table>
     {/* delete modal */}
-    {/* <DeleteModal
+    <DeleteModal
         show={modalShow}
         onHide={() => setModalShow(false)}
-      /> */}
+      />
     </>
   );
 };
