@@ -1,74 +1,44 @@
 import { useForm } from "react-hook-form";
-import { Form, Button, Card, Row, Col } from "react-bootstrap";
+import { Form, Button, Card, Row, Col, Table } from "react-bootstrap";
 import FormInput from "../../From/FormInput";
 import { FiSave } from "react-icons/fi";
 
 const ResultInputForm = () => {
   const { handleSubmit, control } = useForm();
+  // const [testData , setTestData] = useState([])
 
   const onSubmit = (data) => {
     console.log("Form data:", data);
     // Handle form submission (e.g., API call)
   };
+  const onSubmit2 = (data) => {
+    console.log("Form data:", data);
+    // Handle form submission (e.g., API call)
+  };
+  const testData = [
+    { id: 1, code: "1011", name: "CBC", price: 200 },
+    { id: 2, code: "1012", name: "HBAC", price: 300 },
+    { id: 3, code: "1013", name: "Lipid Profile", price: 500 },
+    { id: 4, code: "1014", name: "LFT", price: 400 },
+    // Add more test data as needed
+  ];
 
   return (
     <div className="container mt-5 mb-5">
-      <Card className=" shadow-md rounded">
+      <Card className=" shadow-md custom-bg-main-light border-0 rounded">
         <Card.Header
           as="h5"
-          className="custom-bg-main text-white text-center py-3 rounded-top"
+          className=" text-black text-center py-3 rounded-top"
         >
-         Test Result Input
+          Test Result Input
         </Card.Header>
         <Card.Body className="p-4">
           {/* <h4 className="col-lg-3 col-9 mx-auto text-center py-2 rounded-2 mb-5 bg-secondary bg-opacity-25">
             Result Input Details
           </h4> */}
-          <Form onSubmit={handleSubmit(onSubmit)}>
-            <Row>
-              <Col md={6}>
-                <FormInput
-                  name="resultId"
-                  control={control}
-                  label="Result ID"
-                  placeholder="Unique identifier for each test result"
-                  rules={{ required: "Result ID is required" }}
-                />
-              </Col>
-              <Col md={6}>
-                <FormInput
-                  name="patientId"
-                  control={control}
-                  label="Patient ID"
-                  placeholder="Identifier for the patient who took the test"
-                  rules={{ required: "Patient ID is required" }}
-                />
-              </Col>
-            </Row>
-
-            <Row>
-              <Col md={6}>
-                <FormInput
-                  name="testId"
-                  control={control}
-                  label="Test ID"
-                  placeholder="Identifier for the test conducted"
-                  rules={{ required: "Test ID is required" }}
-                />
-              </Col>
-              <Col md={6}>
-                <FormInput
-                  name="sampleId"
-                  control={control}
-                  label="Sample ID"
-                  placeholder="Identifier for the sample provided by the patient"
-                  rules={{ required: "Sample ID is required" }}
-                />
-              </Col>
-            </Row>
-
-            <Row>
-              <Col md={6}>
+          <Form onSubmit={handleSubmit(onSubmit2)}>
+          <Row>
+              <Col md={4}>
                 <FormInput
                   name="testDate"
                   control={control}
@@ -77,7 +47,7 @@ const ResultInputForm = () => {
                   rules={{ required: "Test Date is required" }}
                 />
               </Col>
-              <Col md={6}>
+              <Col md={4}>
                 <FormInput
                   name="resultDate"
                   control={control}
@@ -86,26 +56,7 @@ const ResultInputForm = () => {
                   rules={{ required: "Result Date is required" }}
                 />
               </Col>
-            </Row>
-
-            <FormInput
-              name="testResult"
-              control={control}
-              label="Test Result"
-              placeholder="Actual result values (e.g., 5.1 mmol/L for glucose level)"
-              rules={{ required: "Test Result is required" }}
-            />
-            <Row>
-              <Col md={6}>
-                <FormInput
-                  name="normalRange"
-                  control={control}
-                  label="Normal Range"
-                  placeholder="Reference range for the test result"
-                  rules={{ required: "Normal Range is required" }}
-                />
-              </Col>
-              <Col md={6}>
+              <Col md={4}>
                 <FormInput
                   name="labTechnician"
                   control={control}
@@ -115,27 +66,98 @@ const ResultInputForm = () => {
                 />
               </Col>
             </Row>
+            <Row>
+              <Col md={4}>
+                <FormInput
+                  name="resultId"
+                  control={control}
+                  label="Result ID"
+                  placeholder="Unique identifier for each test result"
+                  rules={{ required: "Result ID is required" }}
+                />
+              </Col>
+              <Col md={4}>
+                <FormInput
+                  name="patientId"
+                  control={control}
+                  label="Patient ID"
+                  placeholder="Identifier for the patient who took the test"
+                  rules={{ required: "Patient ID is required" }}
+                />
+              </Col>
+              <Col md={4}>
+                <FormInput
+                  name="sampleId"
+                  control={control}
+                  label="Sample ID"
+                  placeholder="Identifier for the sample provided by the patient"
+                  rules={{ required: "Sample ID is required" }}
+                />
+              </Col>
+            </Row>
+          </Form>
 
-            <FormInput
-              name="remarks"
-              control={control}
-              label="Remarks"
-              placeholder="Any additional notes or remarks related to the result"
-              as="textarea"
-              rows={3}
-            />
+          {/* test result */}
+          <Table
+            striped
+            bordered
+            hover
+            responsive
+            className="text-center shadow-md Custom-bg-main-light"
+          >
+            <thead className="thead-dark">
+              <tr>
+                <th>SL NO</th>
+                <th>Test Id</th>
+                <th>Test Name</th>
+                <th>Test Result</th>
+                <th>Reference</th>
+              </tr>
+            </thead>
+            <tbody>
+              {testData?.map((test, index) => (
+                <tr key={test.id}>
+                  <td>{index + 1}</td>
+                  <td>{test.code}</td>
+                  <td>{test.name}</td>
+                  <td>{test.price}</td>
+                  <td className="d-flex gap-3 justify-content-center">
+                    Dr. John Smith
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
 
-            <FormInput
-              name="doctorComments"
-              control={control}
-              label="Doctor Comments"
-              placeholder="Comments or observations by the doctor reviewing the result"
-              as="textarea"
-              rows={3}
-            />
+          <Form onSubmit={handleSubmit(onSubmit)}>
+            
 
             <Row>
               <Col md={6}>
+                <FormInput
+                  name="remarks"
+                  control={control}
+                  label="Remarks"
+                  placeholder="Any additional notes or remarks related to the result"
+                  as="textarea"
+                  rows={3}
+                />
+              </Col>
+
+              <Col md={6}>
+                <FormInput
+                  name="doctorComments"
+                  control={control}
+                  label="Doctor Comments"
+                  placeholder="Comments or observations by the doctor reviewing the result"
+                  as="textarea"
+                  rows={3}
+                />
+              </Col>
+            </Row>
+
+            <Row>
+              <Col md={4}>
                 <FormInput
                   name="resultStatus"
                   control={control}
@@ -147,7 +169,7 @@ const ResultInputForm = () => {
                   <option value="Finalized">Finalized</option>
                 </FormInput>
               </Col>
-              <Col md={6}>
+              <Col md={4}>
                 <FormInput
                   name="authorizedBy"
                   control={control}
@@ -156,15 +178,17 @@ const ResultInputForm = () => {
                   rules={{ required: "Authorization is required" }}
                 />
               </Col>
+              <Col md={4}>
+                <FormInput
+                  name="attachment"
+                  control={control}
+                  label="Attachment"
+                  type="file"
+                  rules={{ required: "Attachment is required" }}
+                />
+              </Col>
             </Row>
 
-            <FormInput
-              name="attachment"
-              control={control}
-              label="Attachment"
-              type="file"
-              rules={{ required: "Attachment is required" }}
-            />
             <div className="text-center w-100">
               <Button
                 className="custom-bg-main border-0 d-flex align-items-center  mx-auto  gap-2 justify-content-center"

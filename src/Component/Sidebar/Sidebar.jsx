@@ -3,7 +3,7 @@ import { useState } from "react";
 import { RiMenu3Fill } from "react-icons/ri";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { FaUserDoctor, FaUserPen, FaChrome } from "react-icons/fa6";
-import { FaParking, FaRegHospital } from "react-icons/fa";
+import { FaParking } from "react-icons/fa";
 import {
   MdOutlineEventAvailable,
   MdOutlineKeyboardArrowRight,
@@ -57,10 +57,11 @@ const Sidebar = ({ setOpen, open }) => {
       >
         <div
           id="sidebar"
-          className="custom-sidebar-width overflow-y-scroll  px-4 pb-4  text-black"
+          className="custom-sidebar-width custom-bg-main-light overflow-y-scroll  px-4 pb-4  text-black"
           style={{
             height: "100vh",
             overflowY: "scroll",
+            // backdropFilter:'blur(30px)',
             scrollbarWidth: "none",
             scrollbarColor: "#696cff #f1f1f1",
           }}

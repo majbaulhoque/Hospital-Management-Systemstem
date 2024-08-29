@@ -122,7 +122,7 @@ const TestTable = () => {
       </InputGroup>
 
       {/* table */}
-      <Table  striped bordered hover responsive className="text-center shadow-md">
+      <Table  striped bordered hover responsive className="text-center striped-table shadow-md">
         <thead className="thead-dark">
           <tr>
             <th>SL NO</th>

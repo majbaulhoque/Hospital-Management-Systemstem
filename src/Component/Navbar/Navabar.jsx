@@ -38,7 +38,7 @@ const Navbar = () => {
           Login
         </button>
         <div
-          className="position-relative"
+          className="position-relative "
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           ref={hoverRef}
@@ -46,7 +46,7 @@ const Navbar = () => {
           <FaRegCircleUser className="fs-2 text-main" />
           {isHovered && (
             <div
-              className="dropdown-menu position-absolute end-0 mt-2 p-2 bg-dark-subtle rounded shadow"
+              className="dropdown-menu position-absolute bg-white z-3  end-0 mt-2 p-2 rounded shadow"
               style={{ display: "block" }}
             >
               <div
