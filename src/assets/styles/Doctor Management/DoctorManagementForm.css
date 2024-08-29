@@ -80,3 +80,9 @@ input[type='number'] {
     }
 }
 
+
+/* Invoice Generation */
+
+.invoice-container{
+    background: #696cff29;
+}

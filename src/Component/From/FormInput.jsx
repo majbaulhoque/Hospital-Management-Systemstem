@@ -4,7 +4,7 @@
 import { Form } from 'react-bootstrap';
 import { useController } from 'react-hook-form';
 
-const FormInput = ({ name, control, label, type = 'text', placeholder, rules = {}, as = 'input', children, defaultValue='' }) => {
+const FormInput = ({ name, control, label, type = 'text', placeholder, rules = {}, as = 'input', children, defaultValue = '' }) => {
   const {
     field,
     fieldState: { error },
