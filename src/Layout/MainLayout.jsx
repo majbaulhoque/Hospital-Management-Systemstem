@@ -12,12 +12,12 @@ const MainLayout = () => {
         <Sidebar setOpen={setOpen} open={open} />
       </div>
       <div className="flex-grow-1 d-flex flex-column">
-        <div className="w-100 position-sticky flex-1 z-2 top-0">
+        <div style={{backdropFilter: "blur(50px)" }} className={` ${open && "ms-auto custom-outlet-size "}  position-sticky flex-1 z-2 top-0`}>
           <Navbar />
         </div>
         <div
          
-          className={` ${open && "ms-auto custom-outlet-size "} px-3 flex-grow-1 `}
+          className={` ${open && "ms-auto custom-outlet-size "} px-3 flex-grow-1`}
         >
           <Outlet />
         </div>

@@ -28,7 +28,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="d-flex shadow-lg gap-3 bg-white position-sticky me-2 pt-3 pe-3 pb-3 top-0 justify-content-end align-items-center custom-bg-main text-white text-end w-100">
+    <nav className="d-flex shadow-lg gap-3 bg-white position-sticky me-2 pt-3 pe-3 pb-3 top-0 justify-content-end align-items-center custom-bg-main-light text-black text-end w-100">
       <div className="d-flex gap-3 align-items-center">
         <button
           onClick={() => navigate("/login")}
@@ -52,36 +52,38 @@ const Navbar = () => {
               <div
                 role="button"
                 className="d-flex align-items-center gap-2 justify-content-center custom-btn-hover text-center"
-                
               >
                 <FiUsers /> Users
               </div>
               <div
                 role="button"
                 className="d-flex align-items-center gap-2 justify-content-center custom-btn-hover text-center"
-                
               >
-                <FaInfoCircle />Your Info
+                <FaInfoCircle />
+                Your Info
               </div>
               <div
-              onClick={() => navigate('/create-user')}
+                onClick={() => navigate("/create-user")}
                 role="button"
                 className="d-flex align-items-center gap-2 justify-content-center custom-btn-hover text-center"
               >
-                <IoCreateSharp />Make User
+                <IoCreateSharp />
+                Make User
               </div>
               <div
                 role="button"
                 className="d-flex align-items-center gap-2 justify-content-center custom-btn-hover text-center"
               >
-                <FaUserFriends />All User
+                <FaUserFriends />
+                All User
               </div>
               <hr className="dropdown-divider" />
               <div
                 role="button"
                 className="d-flex align-items-center gap-2 justify-content-center text-danger text-center"
               >
-                <PiSignOutLight  />Sign Out
+                <PiSignOutLight />
+                Sign Out
               </div>
             </div>
           )}

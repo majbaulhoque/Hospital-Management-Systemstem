@@ -1,10 +1,12 @@
+/* eslint-disable no-unused-vars */
 import { useForm } from "react-hook-form";
-import { Form, Button, Col, Row, Card } from "react-bootstrap";
+import { Card, Button, Col, Row, Form } from "react-bootstrap";
 import { FiSave } from "react-icons/fi";
+import FormInput from "../../../From/FormInput";
 
 const TestForm = () => {
   const {
-    register,
+    control,
     handleSubmit,
     formState: { errors },
   } = useForm();
@@ -16,276 +18,181 @@ const TestForm = () => {
 
   return (
     <div className="container mt-5 mb-5">
-      <Card className=" shadow-sm rounded">
+      <Card className="shadow-md custom-bg-main-light  rounded border-0">
         <Card.Header
           as="h5"
-          className="custom-bg-main text-white text-center py-3 rounded-top"
+          className="custom-text-main text-center py-3 rounded-top"
         >
-           Create New Test
+          Create New Test
         </Card.Header>
-        <Card.Body className="p-4">
-          {/* <h4 className="col-lg-3 col-9 mx-auto text-center py-2 rounded-2 mb-5 bg-secondary bg-opacity-25">
-            Create Test Attributes
-          </h4> */}
+        <Card.Body className="p-5">
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Row className="mb-3">
-              {/* test id */}
-              <Form.Group as={Col} md={6} controlId="testId">
-                <Form.Label>Test ID</Form.Label>
-                <Form.Control
-                  type="text"
+              <Col md={4}>
+                <FormInput
+                  name="testId"
+                  control={control}
+                  label="Test ID"
                   placeholder="Unique identifier for each test"
-                  {...register("testId", { required: "Test ID is required" })}
-                  isInvalid={!!errors.testId}
+                  rules={{ required: "Test ID is required" }}
                 />
-                {errors.testId && (
-                  <Form.Control.Feedback type="invalid">
-                    {errors.testId.message}
-                  </Form.Control.Feedback>
-                )}
-              </Form.Group>
-
-              <Form.Group as={Col} md={6} controlId="testName">
-                {/* test name */}
-                <Form.Label>Test Name</Form.Label>
-                <Form.Control
-                  type="text"
+              </Col>
+              <Col md={4}>
+                <FormInput
+                  name="testName"
+                  control={control}
+                  label="Test Name"
                   placeholder="Name of the test (e.g., Blood Test, X-ray)"
-                  {...register("testName", {
-                    required: "Test Name is required",
-                  })}
-                  isInvalid={!!errors.testName}
+                  rules={{ required: "Test Name is required" }}
                 />
-                {errors.testName && (
-                  <Form.Control.Feedback type="invalid">
-                    {errors.testName.message}
-                  </Form.Control.Feedback>
-                )}
-              </Form.Group>
-            </Row>
-
-            <Row className="mb-3">
-              <Form.Group as={Col} md={6} controlId="testCategory">
-                {/* test category */}
-                <Form.Label>Test Category</Form.Label>
-                <Form.Control
-                  type="text"
+              </Col>
+              <Col md={4}>
+                <FormInput
+                  name="testCategory"
+                  control={control}
+                  label="Test Category"
                   placeholder="Category under which the test falls (e.g., Hematology, Radiology)"
-                  {...register("testCategory", {
-                    required: "Test Category is required",
-                  })}
-                  isInvalid={!!errors.testCategory}
+                  rules={{ required: "Test Category is required" }}
                 />
-                {errors.testCategory && (
-                  <Form.Control.Feedback type="invalid">
-                    {errors.testCategory.message}
-                  </Form.Control.Feedback>
-                )}
-              </Form.Group>
+              </Col>
+            </Row>
 
-              <Form.Group as={Col} md={6} controlId="testCode">
-                {/* test code */}
-                <Form.Label>Test Code</Form.Label>
-                <Form.Control
-                  type="text"
+            <Row className="mb-3">
+              <Col md={6}>
+                <FormInput
+                  name="testCode"
+                  control={control}
+                  label="Test Code"
                   placeholder="Optional code for the test (used for billing or internal purposes)"
-                  {...register("testCode", {
-                    required: "Test Code is required",
-                  })}
-                  isInvalid={!!errors.testCategory}
+                  rules={{ required: "Test Code is required" }}
                 />
-                {errors.testCode && (
-                  <Form.Control.Feedback type="invalid">
-                    {errors.testCode.message}
-                  </Form.Control.Feedback>
-                )}
-              </Form.Group>
-            </Row>
+              </Col>
 
-            <Form.Group className="mb-3" controlId="testDescription">
-              {/* test description */}
-              <Form.Label>Test Description</Form.Label>
-              <Form.Control
-                as="textarea"
-                rows={3}
-                placeholder="Detailed description of the test"
-                {...register("testDescription", {
-                  required: "Test Description is required",
-                })}
-                isInvalid={!!errors.testDescription}
-              />
-              {errors.testDescription && (
-                <Form.Control.Feedback type="invalid">
-                  {errors.testDescription.message}
-                </Form.Control.Feedback>
-              )}
-            </Form.Group>
-
-            <Row className="mb-3">
-              <Form.Group as={Col} md={6} controlId="sampleRequired">
-                {/* sample required */}
-                <Form.Label>Sample Required</Form.Label>
-                <Form.Control
-                  type="text"
+              <Col md={6}>
+                <FormInput
+                  name="sampleRequired"
+                  control={control}
+                  label="Sample Required"
                   placeholder="Type of sample required (e.g., blood, urine)"
-                  {...register("sampleRequired", {
-                    required: "Sample Required is required",
-                  })}
-                  isInvalid={!!errors.sampleRequired}
+                  rules={{ required: "Sample Required is required" }}
                 />
-                {errors.sampleRequired && (
-                  <Form.Control.Feedback type="invalid">
-                    {errors.sampleRequired.message}
-                  </Form.Control.Feedback>
-                )}
-              </Form.Group>
-              {/* preparation required */}
-              <Form.Group as={Col} md={6} controlId="preparationRequired">
-                <Form.Label>Preparation Required</Form.Label>
-                <Form.Control
-                  type="text"
+              </Col>
+            </Row>
+            <Row>
+              <Col md={12}>
+                <FormInput
+                  name="testDescription"
+                  control={control}
+                  label="Test Description"
+                  placeholder="Detailed description of the test"
+                  as="textarea"
+                  rows={3}
+                  rules={{ required: "Test Description is required" }}
+                />
+              </Col>
+            </Row>
+
+            <Row className="mb-3">
+              <Col md={4}>
+                <FormInput
+                  name="preparationRequired"
+                  control={control}
+                  label="Preparation Required"
                   placeholder="Any special instructions for the patient before the test (e.g., fasting)"
-                  {...register("preparationRequired", {
-                    required: "Preparation Required is required",
-                  })}
-                  isInvalid={!!errors.preparationRequired}
+                  rules={{ required: "Preparation Required is required" }}
                 />
-                {errors.preparationRequired && (
-                  <Form.Control.Feedback type="invalid">
-                    {errors.preparationRequired.message}
-                  </Form.Control.Feedback>
-                )}
-              </Form.Group>
-            </Row>
-
-            <Row className="mb-3">
-              {/* test price */}
-              <Form.Group as={Col} md={6} controlId="testPrice">
-                <Form.Label>Test Price</Form.Label>
-                <Form.Control
-                  type="number"
+              </Col>
+              <Col md={4}>
+                <FormInput
+                  name="testPrice"
+                  control={control}
+                  label="Test Price"
                   placeholder="Cost associated with the test"
-                  {...register("testPrice", {
-                    required: "Test Price is required",
-                  })}
-                  isInvalid={!!errors.testPrice}
+                  type="number"
+                  rules={{ required: "Test Price is required" }}
                 />
-                {errors.testPrice && (
-                  <Form.Control.Feedback type="invalid">
-                    {errors.testPrice.message}
-                  </Form.Control.Feedback>
-                )}
-              </Form.Group>
-
-              <Form.Group as={Col} md={6} controlId="department">
-                {/* department */}
-                <Form.Label>Department</Form.Label>
-                <Form.Control
-                  type="text"
+              </Col>
+              <Col md={4}>
+                <FormInput
+                  name="department"
+                  control={control}
+                  label="Department"
                   placeholder="Department responsible for conducting the test"
-                  {...register("department", {
-                    required: "Department is required",
-                  })}
-                  isInvalid={!!errors.department}
+                  rules={{ required: "Department is required" }}
                 />
-                {errors.department && (
-                  <Form.Control.Feedback type="invalid">
-                    {errors.department.message}
-                  </Form.Control.Feedback>
-                )}
-              </Form.Group>
+              </Col>
             </Row>
 
             <Row className="mb-3">
-              <Form.Group as={Col} md={6} controlId="testDuration">
-                {/* test duration */}
-                <Form.Label>Test Duration</Form.Label>
-                <Form.Control
-                  type="text"
+              <Col md={4}>
+                <FormInput
+                  name="testDuration"
+                  control={control}
+                  label="Test Duration"
                   placeholder="Approximate time to complete the test"
-                  {...register("testDuration", {
-                    required: "Test Duration is required",
-                  })}
-                  isInvalid={!!errors.testDuration}
+                  rules={{ required: "Test Duration is required" }}
                 />
-                {errors.testDuration && (
-                  <Form.Control.Feedback type="invalid">
-                    {errors.testDuration.message}
-                  </Form.Control.Feedback>
-                )}
-              </Form.Group>
-
-              <Form.Group as={Col} md={6} controlId="testProcedure">
-                {/* test procedure */}
-                <Form.Label>Test Procedure</Form.Label>
-                <Form.Control
-                  type="text"
+              </Col>
+              <Col md={4}>
+                <FormInput
+                  name="testProcedure"
+                  control={control}
+                  label="Test Procedure"
                   placeholder="Detailed steps or procedures for the test"
-                  {...register("testProcedure", {
-                    required: "Test Procedure is required",
-                  })}
-                  isInvalid={!!errors.testProcedure}
+                  rules={{ required: "Test Procedure is required" }}
                 />
-                {errors.testProcedure && (
-                  <Form.Control.Feedback type="invalid">
-                    {errors.testProcedure.message}
-                  </Form.Control.Feedback>
-                )}
-              </Form.Group>
+              </Col>
+              <Col md={4}>
+                <FormInput
+                  name="associatedEquipment"
+                  control={control}
+                  label="Associated Equipment"
+                  placeholder="Any equipment required for the test"
+                  rules={{ required: "Associated Equipment is required" }}
+                />
+              </Col>
             </Row>
 
-            <Form.Group className="mb-3" controlId="associatedEquipment">
-              {/* Associated Equipment */}
-              <Form.Label>Associated Equipment</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Any equipment required for the test"
-                {...register("associatedEquipment", {
-                  required: "Associated Equipment is required",
-                })}
-                isInvalid={!!errors.associatedEquipment}
-              />
-              {errors.associatedEquipment && (
-                <Form.Control.Feedback type="invalid">
-                  {errors.associatedEquipment.message}
-                </Form.Control.Feedback>
-              )}
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="labTechnician">
-              {/* Lab Technician Assigned */}
-              <Form.Label>Lab Technician Assigned</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Name or ID of the lab technician responsible for the test"
-                {...register("labTechnician", {
-                  required: "Lab Technician Assigned is required",
-                })}
-                isInvalid={!!errors.labTechnician}
-              />
-              {errors.labTechnician && (
-                <Form.Control.Feedback type="invalid">
-                  {errors.labTechnician.message}
-                </Form.Control.Feedback>
-              )}
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="testStatus">
-              {/* Test Status */}
-              <Form.Label>Test Status</Form.Label>
-              <Form.Control
-                as="select"
-                {...register("testStatus")}
-                defaultValue="Active"
-              >
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
-              </Form.Control>
-            </Form.Group>
+            <Row className="mb-3">
+              <Col md={4}>
+                <FormInput
+                  name="labTechnician"
+                  control={control}
+                  label="Lab Technician Assigned"
+                  placeholder="Name or ID of the lab technician responsible for the test"
+                  rules={{ required: "Lab Technician Assigned is required" }}
+                />
+              </Col>
+              <Col md={8}>
+                <Form.Group className="fw-medium" controlId="testStatus">
+                  <Form.Label>Test Status</Form.Label>
+                  <div className="mt-2">
+                    <Form.Check
+                      type="radio"
+                      label="Active"
+                      value="Active"
+                      name="testStatus"
+                      id="testStatusActive"
+                      control={control}
+                      inline
+                    />
+                    <Form.Check
+                      type="radio"
+                      label="Inactive"
+                      value="Inactive"
+                      name="testStatus"
+                      id="testStatusInactive"
+                      control={control}
+                      inline
+                    />
+                  </div>
+                </Form.Group>
+              </Col>
+            </Row>
 
             <div className="text-center w-100">
               <Button
-                className="custom-bg-main border-0 d-flex align-items-center  mx-auto  gap-2 justify-content-center"
+                className="custom-bg-main border-0 d-flex align-items-center mx-auto gap-2 justify-content-center"
                 variant="primary"
                 type="submit"
                 size="lg"

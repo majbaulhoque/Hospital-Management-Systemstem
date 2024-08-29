@@ -81,8 +81,8 @@ const CheckboxesExample = () => {
   return (
     <div className="container mb-5">
           {/* Dashboard */}
-      <div className="row border border-dark-subtle mt-3 rounded-3">
-        <div className="col border border-dark-subtle p-3 fw-bold">
+      <div className="row border custom-border mt-3 rounded-3">
+        <div className="col border custom-border p-3 fw-bold">
           <Form.Check
             type="checkbox"
             label={<span>Dashboard</span>}
@@ -91,8 +91,8 @@ const CheckboxesExample = () => {
         
       </div>
       {/* Doctor Section */}
-      <div className="row border border-dark-subtle mt-3 rounded-3">
-        <div className="col-lg-2 border border-dark-subtle p-3 fw-bold">
+      <div className="row border custom-border mt-3 rounded-3">
+        <div className="col-lg-2 border custom-border p-3 fw-bold">
           <Form.Check
             type="checkbox"
             label={<span>Doctor</span>}
@@ -100,7 +100,7 @@ const CheckboxesExample = () => {
             onChange={() => handleParentCheckboxChange(setDoctorChecked, setDoctorChildChecked, Object.values(doctorChildChecked))}
           />
         </div>
-        <div className="col border d-flex flex-wrap gap-4 border-dark-subtle p-3">
+        <div className="col border d-flex flex-wrap gap-4 custom-border p-3">
           <Form.Check
             type="checkbox"
             label={<span>Doctor Management</span>}
@@ -129,8 +129,8 @@ const CheckboxesExample = () => {
       </div>
 
       {/* Lab Test Section */}
-      <div className="row border border-dark-subtle mt-3 rounded-3">
-        <div className="col-lg-2 border border-dark-subtle p-3 fw-bold">
+      <div className="row border custom-border mt-3 rounded-3">
+        <div className="col-lg-2 border custom-border p-3 fw-bold">
           <Form.Check
             type="checkbox"
             label={<span>Lab Test</span>}
@@ -138,7 +138,7 @@ const CheckboxesExample = () => {
             onChange={() => handleParentCheckboxChange(setLabTestChecked, setLabTestChildChecked, Object.values(labTestChildChecked))}
           />
         </div>
-        <div className="col border d-flex flex-wrap gap-4 border-dark-subtle p-3">
+        <div className="col border d-flex flex-wrap gap-4 custom-border p-3">
           <Form.Check
             type="checkbox"
             label={<span>Test Management</span>}
@@ -167,8 +167,8 @@ const CheckboxesExample = () => {
       </div>
 
       {/* Patient Section */}
-      <div className="row border border-dark-subtle mt-3 rounded-3">
-        <div className="col-lg-2 border border-dark-subtle p-3 fw-bold">
+      <div className="row border custom-border mt-3 rounded-3">
+        <div className="col-lg-2 border custom-border p-3 fw-bold">
           <Form.Check
             type="checkbox"
             label={<span>Patient</span>}
@@ -176,7 +176,7 @@ const CheckboxesExample = () => {
             onChange={() => handleParentCheckboxChange(setPatientChecked, setPatientChildChecked, Object.values(patientChildChecked))}
           />
         </div>
-        <div className="col border d-flex flex-wrap gap-4 border-dark-subtle p-3">
+        <div className="col border d-flex flex-wrap gap-4 custom-border p-3">
           <Form.Check
             type="checkbox"
             label={<span>Patient Registration</span>}
@@ -205,8 +205,8 @@ const CheckboxesExample = () => {
       </div>
 
       {/* Accounts Section */}
-      <div className="row border border-dark-subtle mt-3 rounded-3">
-        <div className="col-lg-2 border border-dark-subtle p-3 fw-bold">
+      <div className="row border custom-border mt-3 rounded-3">
+        <div className="col-lg-2 border custom-border p-3 fw-bold">
           <Form.Check
             type="checkbox"
             label={<span>Accounts</span>}
@@ -214,7 +214,7 @@ const CheckboxesExample = () => {
             onChange={() => handleParentCheckboxChange(setAccountsChecked, setAccountsChildChecked, Object.values(accountsChildChecked))}
           />
         </div>
-        <div className="col border d-flex flex-wrap gap-4 border-dark-subtle p-3">
+        <div className="col border d-flex flex-wrap gap-4 custom-border p-3">
           <Form.Check
             type="checkbox"
             label={<span>Income Management</span>}
@@ -249,8 +249,8 @@ const CheckboxesExample = () => {
       </div>
 
       {/* Report Section */}
-      <div className="row border border-dark-subtle mt-3 rounded-3">
-        <div className="col-lg-2 border border-dark-subtle p-3 fw-bold">
+      <div className="row border custom-border mt-3 rounded-3">
+        <div className="col-lg-2 border custom-border p-3 fw-bold">
           <Form.Check
             type="checkbox"
             label={<span>Report</span>}
@@ -258,7 +258,7 @@ const CheckboxesExample = () => {
             onChange={() => handleParentCheckboxChange(setReportChecked, setReportChildChecked, Object.values(reportChildChecked))}
           />
         </div>
-        <div className="col border d-flex flex-wrap gap-4 border-dark-subtle p-3">
+        <div className="col border d-flex flex-wrap gap-4 custom-border p-3">
           <Form.Check
             type="checkbox"
             label={<span>Profit/Loss Tracking</span>}
@@ -293,8 +293,8 @@ const CheckboxesExample = () => {
       </div>
 
       {/* HR Section */}
-      <div className="row border border-dark-subtle mt-3 rounded-3">
-        <div className="col-lg-2 border border-dark-subtle p-3 fw-bold">
+      <div className="row border custom-border mt-3 rounded-3">
+        <div className="col-lg-2 border custom-border p-3 fw-bold">
           <Form.Check
             type="checkbox"
             label={<span>HR</span>}
@@ -302,7 +302,7 @@ const CheckboxesExample = () => {
             onChange={() => handleParentCheckboxChange(setHrChecked, setHrChildChecked, Object.values(hrChildChecked))}
           />
         </div>
-        <div className="col border d-flex flex-wrap gap-4 border-dark-subtle p-3">
+        <div className="col border d-flex flex-wrap gap-4 custom-border p-3">
           <Form.Check
             type="checkbox"
             label={<span>Employee Management</span>}

@@ -17,7 +17,7 @@ const FormInput = ({ name, control, label, type = 'text', placeholder, rules = {
 
   return (
     <Form.Group controlId={name} className="mb-3">
-      <Form.Label>{label}</Form.Label>
+      <Form.Label className='fw-medium'>{label}</Form.Label>
       <Form.Control
         {...field}
         type={type}

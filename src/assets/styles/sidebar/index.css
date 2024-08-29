@@ -1,26 +1,28 @@
 /* sidebar and dropdown */
+/* white */
 
 .custom-sidebar-width {
   width: 280px;
 }
 .custom-dropDown > button {
-  background-color: #001529;
+  background-color: transparent;
   border: none;
 }
 .custom-dropDown > button:hover {
-  background-color: #001529;
-  /* background-color: #001529; */
+  background-color: transparent;
+  /* background-color: transparent; */
   border: none;
 }
 .custom-dropDown > button:focus {
-  background-color: #001529;
+  background-color: transparent;
 }
 
 .custom-dropDown {
   position: relative;
 }
-
-.custom-dropDown:hover .dropdown-menu {
+/* 
+.custom-dropDown:hover  */
+.dropdown-menu {
   display: block;
   opacity: 1;
   visibility: visible;
@@ -34,7 +36,7 @@
 }
 
 .custom-dropdown-menu {
-  background-color: #001529 !important;
+ background-color: transparent ;;
   padding: 0px !important;
   color: white !important;
   overflow: hidden;
@@ -65,6 +67,40 @@
 :not(.btn-check) + .btn:active {
   background-color: transparent;
 }
+.custom-dropDown-toggle {
+  cursor: pointer;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+}
+
+.custom-dropdown-menu {
+  padding-left: 16px;
+  padding-top: 8px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.custom-position-absolute-mobile {
+  /* Custom positioning for mobile */
+}
+
+.custom-z-index {
+  z-index: 1040;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+a{
+  text-decoration: none;
+}
+
 @media (max-width: 500px) {
   .custom-position-absolute-mobile {
     position: absolute !important;
