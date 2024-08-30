@@ -35,7 +35,7 @@ const Sidebar = ({ setOpen, open }) => {
 
   return (
     <div
-      className="position-fixed shadow-lg z-3 custom-position-fixed-mobile custom-bg-main-light text-black h-100 custom-z-index"
+      className="position-fixed shadow-md z-3 custom-position-fixed-mobile custom-bg-main-light text-black h-100 custom-z-index"
       style={{ top: 0, left: 0, bottom: 0, minHeight: "100vh" }}
     >
       {!open && (
@@ -52,12 +52,12 @@ const Sidebar = ({ setOpen, open }) => {
 
       <Collapse
         in={open}
-        className="position-relative custom-position-absolute-mobile"
+        className="position-relative custom-position-fixed-mobile"
         dimension="width"
       >
         <div
           id="sidebar"
-          className="custom-sidebar-width custom-bg-main-light overflow-y-scroll  px-4 pb-4  text-black"
+          className="custom-sidebar-width  overflow-y-scroll  px-4 pb-4  text-black"
           style={{
             height: "100vh",
             overflowY: "scroll",
@@ -67,8 +67,8 @@ const Sidebar = ({ setOpen, open }) => {
           }}
         >
           <div
-            style={{ zIndex: "999", backdropFilter: "blur(30px)" }}
-            className="position-sticky  text-black py-2 z-3 top-0"
+            
+            className="position-sticky custom-blur-lg text-black py-2 z-3 top-0"
           >
             <button
               style={{ right: 2, top: 15 }}

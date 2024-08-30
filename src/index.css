@@ -10,6 +10,10 @@
    color: #696cff29 !important;
   /* background-color: rgb(44, 44, 44); */
 }
+.custom-bg-main-light-lg {
+   background-color: #696cff29 !important;
+  /* background-color: rgb(44, 44, 44); */
+}
 .custom-text-main {
   color: #696cff !important;
   /* color: rgb(100, 13, 13) !important; */
@@ -51,7 +55,12 @@ margin-top: 10px;
  color: #696cff !important;
  padding: 10px;
 } */
+
 @media (max-width:800px) {
+  .custom-bg-main-light-lg {
+    background-color: none !important;
+   /* background-color: rgb(44, 44, 44); */
+ }
   .custom-outlet-size{
     width: 100%;
   }

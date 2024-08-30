@@ -16,15 +16,15 @@ const ResultInputForm = () => {
     // Handle form submission (e.g., API call)
   };
   const testData = [
-    { id: 1, code: "1011", name: "CBC", price: 200 },
-    { id: 2, code: "1012", name: "HBAC", price: 300 },
-    { id: 3, code: "1013", name: "Lipid Profile", price: 500 },
-    { id: 4, code: "1014", name: "LFT", price: 400 },
+    { id: 1, code: "1011", name: "CBC", result: 200 },
+    { id: 2, code: "1012", name: "HBAC", result: 300 },
+    { id: 3, code: "1013", name: "Lipid Profile", result: 500 },
+    { id: 4, code: "1014", name: "LFT", result: 400 },
     // Add more test data as needed
   ];
 
   return (
-    <div className="container mt-5 mb-5">
+    <div className="container-lg mt-5 mb-5">
       <Card className=" shadow-md custom-bg-main-light border-0 rounded">
         <Card.Header
           as="h5"
@@ -37,7 +37,7 @@ const ResultInputForm = () => {
             Result Input Details
           </h4> */}
           <Form onSubmit={handleSubmit(onSubmit2)}>
-          <Row>
+            <Row>
               <Col md={4}>
                 <FormInput
                   name="testDate"
@@ -98,12 +98,14 @@ const ResultInputForm = () => {
           </Form>
 
           {/* test result */}
-          <Table
+        
+      
+      <div className="">
+      <Table
             striped
             bordered
             hover
-            responsive
-            className="text-center shadow-md Custom-bg-main-light"
+            className="text-center table-striped  mt-3 mb-4 shadow-md Custom-bg-main-light"
           >
             <thead className="thead-dark">
               <tr>
@@ -120,18 +122,29 @@ const ResultInputForm = () => {
                   <td>{index + 1}</td>
                   <td>{test.code}</td>
                   <td>{test.name}</td>
-                  <td>{test.price}</td>
-                  <td className="d-flex gap-3 justify-content-center">
-                    Dr. John Smith
+                  <td className="col-3">
+                    <Form.Control
+                      defaultValue={test.result}
+                      type="text"
+                      className="text-center bg-transparent border-0"
+                    />
+                  </td>
+                  <td className="col-3">
+                    <Form.Control
+                      defaultValue={"300-400 ml"}
+                      type="text"
+                      className="text-center bg-transparent border-0"
+                    />
                   </td>
                 </tr>
               ))}
             </tbody>
           </Table>
+      </div>
+      
+        
 
           <Form onSubmit={handleSubmit(onSubmit)}>
-            
-
             <Row>
               <Col md={6}>
                 <FormInput
