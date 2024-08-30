@@ -55,7 +55,10 @@ margin-top: 10px;
  color: #696cff !important;
  padding: 10px;
 } */
+/* normal */
 
+
+/* normal */
 @media (max-width:800px) {
   .custom-bg-main-light-lg {
     background-color: none !important;

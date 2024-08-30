@@ -4,7 +4,7 @@ import Login from "../Pages/Login/Login";
 import CreateUser from "../Pages/CreateUser/CreateUser";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import UserRole from "../Pages/UserRole/UserRole";
-import DoctorManagement from "../Pages/DoctorManagement/DoctorManagement";
+
 import CommissionTracking from "../Pages/Doctors/CommissionTracking";
 import PatientReferralTracking from "../Pages/Doctors/PatientReferralTracking";
 import DoctorLedger from "../Pages/Doctors/DoctorLedger";
@@ -33,6 +33,7 @@ import AddNewTest from "../Pages/LabTest/TestManagement/AddNewTest";
 import ViewAllTest from "../Pages/LabTest/TestManagement/ViewAllTest";
 import ViewTestDetails from "../Pages/LabTest/TestManagement/ViewTestDetails";
 import EditTestForm from "../Component/LabTest/TestManagement/EditTestDetails/EditTestForm";
+import DoctorManagement from "../Pages/Doctors/DoctorManagement";
 
 const Routes = createBrowserRouter([
   {
