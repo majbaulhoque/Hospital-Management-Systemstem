@@ -24,7 +24,7 @@ const ResultInputForm = () => {
   ];
 
   return (
-    <div className="container-lg mt-5 mb-5">
+    <div className="container mt-5 mb-5">
       <Card className=" shadow-md custom-bg-main-light border-0 rounded">
         <Card.Header
           as="h5"
@@ -98,56 +98,55 @@ const ResultInputForm = () => {
           </Form>
 
           {/* test result */}
-        
-      
-      <div className="">
-      <Table
-            striped
-            bordered
-            hover
-            className="text-center table-striped  mt-3 mb-4 shadow-md Custom-bg-main-light"
-          >
-            <thead className="thead-dark">
-              <tr>
-                <th>SL NO</th>
-                <th>Test Id</th>
-                <th>Test Name</th>
-                <th>Test Result</th>
-                <th>Reference</th>
-              </tr>
-            </thead>
-            <tbody>
-              {testData?.map((test, index) => (
-                <tr key={test.id}>
-                  <td>{index + 1}</td>
-                  <td>{test.code}</td>
-                  <td>{test.name}</td>
-                  <td className="col-3">
-                    <Form.Control
-                      defaultValue={test.result}
-                      type="text"
-                      className="text-center bg-transparent border-0"
-                    />
-                  </td>
-                  <td className="col-3">
-                    <Form.Control
-                      defaultValue={"300-400 ml"}
-                      type="text"
-                      className="text-center bg-transparent border-0"
-                    />
-                  </td>
+
+          <div className="table-responsive ">
+            <Table
+              striped
+              responsive
+              bordered
+              hover
+              className="text-center mt-3 mb-4  shadow-md Custom-bg-main-light"
+            >
+              <thead className="thead-dark">
+                <tr>
+                  <th>SL NO</th>
+                  <th>Test Id</th>
+                  <th>Test Name</th>
+                  <th>Test Result</th>
+                  <th>Reference</th>
                 </tr>
-              ))}
-            </tbody>
-          </Table>
-      </div>
-      
-        
+              </thead>
+              <tbody>
+                {testData?.map((test, index) => (
+                  <tr key={test.id}>
+                    <td>{index + 1}</td>
+                    <td>{test.code}</td>
+                    <td>{test.name}</td>
+                    <td className="col-3">
+                        <Form.Control
+                          defaultValue={test.result}
+                          type="text"
+                          className="text-center  bg-transparent border-0"
+                        />
+                      </td>
+                      <td className="col-3">
+                        <Form.Control
+                          defaultValue={"300-400 ml"}
+                          type="text"
+                          className="text-center  bg-transparent border-0"
+                        />
+                      </td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          </div>
 
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Row>
               <Col md={6}>
                 <FormInput
+                
                   name="remarks"
                   control={control}
                   label="Remarks"
@@ -184,6 +183,7 @@ const ResultInputForm = () => {
               </Col>
               <Col md={4}>
                 <FormInput
+
                   name="authorizedBy"
                   control={control}
                   label="Authorized By"
@@ -207,7 +207,7 @@ const ResultInputForm = () => {
                 className="custom-bg-main border-0 d-flex align-items-center  mx-auto  gap-2 justify-content-center"
                 variant="primary"
                 type="submit"
-                size="lg"
+                size="md"
               >
                 <FiSave />
                 Save

@@ -1,10 +1,11 @@
+import Report from "../../Component/LabTest/ReportGeneration/Report";
 
 const ReportGeneration = () => {
-    return (
-        <div>
-         this is report generation   
-        </div>
-    );
+  return (
+    <div>
+      <Report />
+    </div>
+  );
 };
 
 export default ReportGeneration;

@@ -24,7 +24,7 @@ const EditTestForm = () => {
         >
           Edit Test
         </Card.Header>
-        <Card.Body className="p-5">
+        <Card.Body className="p-lg-5 p-3">
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Row className="mb-3">
               <Col md={4}>

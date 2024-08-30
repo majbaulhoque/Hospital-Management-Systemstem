@@ -25,7 +25,7 @@ const TestForm = () => {
         >
           Create New Test
         </Card.Header>
-        <Card.Body className="p-5">
+        <Card.Body className="p-lg-5 p-3">
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Row className="mb-3">
               <Col md={4}>
@@ -195,7 +195,7 @@ const TestForm = () => {
                 className="custom-bg-main border-0 d-flex align-items-center mx-auto gap-2 justify-content-center"
                 variant="primary"
                 type="submit"
-                size="lg"
+                size="md"
               >
                 <FiSave />
                 Save
