@@ -122,25 +122,25 @@ const TestTable = () => {
       </InputGroup>
 
       {/* table */}
-      <div className="table-responsive">
+      <div style={{maxWidth:"80vw"}} className="table-responsive">
   <Table striped bordered hover className="text-center striped-table shadow-md">
     <thead className="thead-dark">
       <tr>
-        <th>SL NO</th>
-        <th>Test Code</th>
-        <th>Test Name</th>
-        <th>Price</th>
-        <th>Action</th>
+        <th className="text-nowrap">SL NO</th>
+        <th className="text-nowrap">Test Code</th>
+        <th className="text-nowrap">Test Name</th>
+        <th className="text-nowrap">Price</th>
+        <th className="text-nowrap">Action</th>
       </tr>
     </thead>
     <tbody>
       {testData.map((test, index) => (
         <tr key={test.id}>
-          <td>{index + 1}</td>
-          <td>{test.code}</td>
-          <td>{test.name}</td>
-          <td>{test.price}</td>
-          <td className="d-flex gap-2 justify-content-center flex-column flex-md-row">
+          <td className="text-nowrap">{index + 1}</td>
+          <td className="text-nowrap">{test.code}</td>
+          <td className="text-nowrap">{test.name}</td>
+          <td className="text-nowrap">{test.price}</td>
+          <td className="d-flex gap-2 justify-content-center text-nowrap ">
             <Button
               onClick={() => navigate('/lab-test/view-test-details/' + test.id)}
               variant="primary"

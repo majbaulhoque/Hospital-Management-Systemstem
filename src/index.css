@@ -44,21 +44,7 @@ margin-top: 10px;
 .form-check .form-check-input{
   border: 1px solid #cbcbcc;
 }
-/* .table-striped>tbody>tr:nth-child(odd)>td, 
-.table-striped>tbody>tr:nth-child(odd)>th {
-   background-color:none; 
- } */
 
-/* .active{
- border-radius: 6px;
- background-color:#696cff29;
- color: #696cff !important;
- padding: 10px;
-} */
-/* normal */
-
-
-/* normal */
 @media (max-width:800px) {
   .custom-bg-main-light-lg {
     background-color: none !important;
@@ -67,4 +53,10 @@ margin-top: 10px;
   .custom-outlet-size{
     width: 100%;
   }
+  .table-responsive{
+    max-width: 75vw;
+    margin: auto;
+    overflow-x: scroll;
+  }
+  
 }

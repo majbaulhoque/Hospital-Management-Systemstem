@@ -32,10 +32,11 @@ const ResultInputForm = () => {
         >
           Test Result Input
         </Card.Header>
-        <Card.Body className="p-4">
+        <Card.Body className="p-lg-4 p-3">
           {/* <h4 className="col-lg-3 col-9 mx-auto text-center py-2 rounded-2 mb-5 bg-secondary bg-opacity-25">
             Result Input Details
           </h4> */}
+          {/* top form */}
           <Form onSubmit={handleSubmit(onSubmit2)}>
             <Row>
               <Col md={4}>
@@ -99,7 +100,7 @@ const ResultInputForm = () => {
 
           {/* test result */}
 
-          <div className="table-responsive ">
+          <div  className="table-responsive mb-3">
             <Table
               striped
               responsive
@@ -109,27 +110,27 @@ const ResultInputForm = () => {
             >
               <thead className="thead-dark">
                 <tr>
-                  <th>SL NO</th>
-                  <th>Test Id</th>
-                  <th>Test Name</th>
-                  <th>Test Result</th>
-                  <th>Reference</th>
+                  <th className="text-nowrap" >SL NO</th>
+                  <th className="text-nowrap">Test Id</th>
+                  <th className="text-nowrap">Test Name</th>
+                  <th className="text-nowrap">Test Result</th>
+                  <th className="text-nowrap">Reference</th>
                 </tr>
               </thead>
               <tbody>
                 {testData?.map((test, index) => (
                   <tr key={test.id}>
-                    <td>{index + 1}</td>
-                    <td>{test.code}</td>
-                    <td>{test.name}</td>
-                    <td className="col-3">
+                    <td className="text-nowrap">{index + 1}</td>
+                    <td className="text-nowrap">{test.code}</td>
+                    <td className="text-nowrap">{test.name}</td>
+                    <td className="col-3 text-nowrap">
                         <Form.Control
                           defaultValue={test.result}
                           type="text"
                           className="text-center  bg-transparent border-0"
                         />
                       </td>
-                      <td className="col-3">
+                      <td className="col-3 text-nowrap">
                         <Form.Control
                           defaultValue={"300-400 ml"}
                           type="text"
@@ -141,7 +142,9 @@ const ResultInputForm = () => {
               </tbody>
             </Table>
           </div>
+          
 
+          {/* bottom form */}
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Row>
               <Col md={6}>
