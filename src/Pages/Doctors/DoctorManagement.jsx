@@ -1,275 +1,287 @@
+/* eslint-disable no-unused-vars */
 import { useState } from 'react';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import Form from 'react-bootstrap/Form';
+import { Button, Card, Col, Row, Form } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
-
 import 'react-datepicker/dist/react-datepicker.css';
-import '../../assets/styles/Doctor Management/DoctorManagementForm.css';
-import { Button } from 'react-bootstrap';
-// import { IoIosArrowDropdown } from "react-icons/io";
+ // Make sure the path is correct
+import { FiSave } from 'react-icons/fi';
+import FormInput from '../../Component/From/FormInput';
+import { useForm } from 'react-hook-form';
 
 const DoctorManagement = () => {
-    const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedDate, setSelectedDate] = useState(null);
 
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-    return (
-        <div className='container mx-lg-auto'>
-            <h2 className="fw-bolder m-3">Personal Information:</h2>
-            <div className='doctor-management-form mx-3 mx-md-5 border p-3 rounded'>
-                <div className="row">
-                    <div className="col-12 col-md-6 col-lg-4">
-                        <FloatingLabel
-                            controlId="floatingDoctorId"
-                            label="Doctor ID"
-                            className="mb-3"
-                        >
-                            <Form.Control type="number" placeholder="Doctor ID" />
-                        </FloatingLabel>
-                    </div>
-                    <div className="col-12 col-md-6 col-lg-4">
-                        <FloatingLabel controlId="floatingTitle" label="Title" className='mb-3'>
-                            <Form.Control type="text" placeholder="Title" />
-                        </FloatingLabel>
-                    </div>
-                    <div className="col-12 col-md-6 col-lg-4">
-                        <FloatingLabel
-                            controlId="floatingDocName"
-                            label="Doctor Name"
-                            className="mb-3"
-                        >
-                            <Form.Control type="text" placeholder="Doctor Name" />
-                        </FloatingLabel>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-12 col-md-6">
-                        <FloatingLabel
-                            controlId="floatingFatherName"
-                            label="Father’s Name"
-                            className="mb-3"
-                        >
-                            <Form.Control type="text" placeholder="Father’s Name" />
-                        </FloatingLabel>
-                    </div>
-                    <div className="col-12 col-md-6">
-                        <FloatingLabel
-                            controlId="floatingAttachment"
-                            label="Attachment"
-                            className="mb-3"
-                        >
-                            <Form.Control type="text" placeholder="Attachment" />
-                        </FloatingLabel>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-12 col-md-6">
-                        <FloatingLabel
-                            controlId="floatingPermanentAddress"
-                            label="Permanent Address"
-                            className="mb-3"
-                        >
-                            <Form.Control type="text" placeholder="Permanent Address" />
-                        </FloatingLabel>
-                    </div>
-                    <div className="col-12 col-md-6">
-                        <FloatingLabel
-                            controlId="floatingPresentAddress"
-                            label="Present Address"
-                            className="mb-3"
-                        >
-                            <Form.Control type="text" placeholder="Present Address" />
-                        </FloatingLabel>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-12 col-md-6 col-lg-4 date-container">
-                        <div className="date-wrapper">
-                            {/* <p className='date-title'>Date of Birth</p> */}
-                            <DatePicker
-                                selected={selectedDate}
-                                onChange={date => setSelectedDate(date)}
-                                dateFormat="dd/MM/yyyy"
-                                className='date-picker mb-3 p-2'
-                                showYearDropdown
-                                scrollableMonthYearDropdown
-                                placeholderText='Date of Birth'
-                            />
-                        </div>
-                    </div>
-                    <div className="col-12 col-md-6 col-lg-4">
-                        <FloatingLabel
-                            controlId="floatingCode"
-                            label="Code"
-                            className="mb-3"
-                        >
-                            <Form.Control type="text" placeholder="Code" />
-                        </FloatingLabel>
-                    </div>
-                    <div className="col-12 col-md-6 col-lg-4">
-                        <FloatingLabel
-                            controlId="floatingAge"
-                            label="Age"
-                            className="mb-3"
-                        >
-                            <Form.Control type="text" placeholder="Age" />
-                        </FloatingLabel>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-12 col-md-4">
-                        <FloatingLabel
-                            controlId="floatingEmail"
-                            label="Email"
-                            className="mb-3"
-                        >
-                            <Form.Control type="email" placeholder="Email" />
-                        </FloatingLabel>
-                    </div>
-                    <div className="col-12 col-md-4">
-                        <FloatingLabel
-                            controlId="floatingNationality"
-                            label="Nationality"
-                            className="mb-3"
-                        >
-                            <Form.Control type="text" placeholder="Nationality" />
-                        </FloatingLabel>
-                    </div>
-                    <div className="col-12 col-md-4">
-                        <FloatingLabel
-                            controlId="floatingNumber"
-                            label="Contact Number"
-                            className="mb-3"
-                        >
-                            <Form.Control type="text" placeholder="Contact Number" />
-                        </FloatingLabel>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-12 col-md-4 gender-container">
-                        <Form.Group className='mb-3 ' controlId="formBloodGroup">
-                            <Form.Select defaultValue="Choose..." className='blood-group'>
-                                <option>Blood Group</option>
-                                <option>A+</option>
-                                <option>A-</option>
-                                <option>B+</option>
-                                <option>B-</option>
-                                <option>AB+</option>
-                                <option>AB-</option>
-                                <option>O+</option>
-                                <option>O-</option>
-                            </Form.Select>
-                        </Form.Group>
-                    </div>
-                    <div className="col-12 col-md-4">
-                        <FloatingLabel
-                            controlId="floatingNationality"
-                            label="Nationality"
-                            className="mb-3"
-                        >
-                            <Form.Control type="text" placeholder="Nationality" />
-                        </FloatingLabel>
-                    </div>
-                    <div className="col-12 col-md-4">
-                        <FloatingLabel
-                            controlId="floatingGenderNumber"
-                            label="Gender Number"
-                            className="mb-3"
-                        >
-                            <Form.Control type="text" placeholder="Gender Number" />
-                        </FloatingLabel>
-                    </div>
-                </div>
-                <div className='row'>
-                    <div className="col-12 col-md-6 col-lg-7">
-                        <FloatingLabel
-                            controlId="floatingQualification"
-                            label="Qualification"
-                            className="mb-3"
-                        >
-                            <Form.Control type="text" placeholder="Qualification" />
-                        </FloatingLabel>
-                    </div>
-                    <div className="col-12 col-md-6 col-lg-5">
-                        <FloatingLabel
-                            controlId="floatingBankAccount"
-                            label="Bank Account"
-                            className="mb-3"
-                        >
-                            <Form.Control type="number" placeholder="Bank Account" />
-                        </FloatingLabel>
-                    </div>
-                </div>
-                <div className='row'>
-                    <div className="col-12 col-md-6 col-lg-4">
-                        <FloatingLabel
-                            controlId="floatingDiscount"
-                            label="Discount"
-                            className="mb-3"
-                        >
-                            <Form.Control type="number" placeholder="Discount" required />
-                        </FloatingLabel>
-                    </div>
-                    <div className="col-12 col-md-6 col-lg-4">
-                        <Form.Group className='mb-3' controlId="formDoctorArea">
-                            <Form.Select defaultValue="Doctor Area" className='blood-group'>
-                                <option>Doctor Area</option>
-                                <option>A+</option>
-                                <option>A-</option>
-                                <option>B+</option>
-                                <option>B-</option>
-                                <option>AB+</option>
-                                <option>AB-</option>
-                                <option>O+</option>
-                                <option>O-</option>
-                            </Form.Select>
-                        </Form.Group>
-                    </div>
-                    <div className="col-12 col-md-6 col-lg-4">
-                        <FloatingLabel
-                            controlId="floatingRateOfVisit"
-                            label="Rate of Visit"
-                            className="mb-3"
-                        >
-                            <Form.Control type="text" placeholder="Rate of Visit" required />
-                        </FloatingLabel>
-                    </div>
-                </div>
-                <div className='row'>
-                    <div className="col-12 col-md-6 col-lg-6">
-                        <FloatingLabel
-                            controlId="floatingOb"
-                            label="OB"
-                            className="mb-3"
-                        >
-                            <Form.Control type="number" placeholder="OB" required />
-                        </FloatingLabel>
-                    </div>
-                    <div className="col-12 col-md-6 col-lg-6">
-                        <FloatingLabel
-                            controlId="floatingBalance"
-                            label="Balance"
-                            className="mb-3"
-                        >
-                            <Form.Control type="number" placeholder="Balance" />
-                        </FloatingLabel>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-12 col-md-6 col-lg-6 ">
-                        <div className='border'>
-
-                        </div>
-                    </div>
-                </div>
-                <Form.Group className="mb-3" id="formGridCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" required />
+  const onSubmit = (data) => {
+    console.log("Form data:", data);
+    // Here, you can make an API call or handle the data as needed
+  };
+  return (
+    <div className='container mt-5 mb-5'>
+      <Card className="shadow-md custom-bg-main-light rounded border-0">
+        <Card.Header
+          as="h5"
+          className="custom-text-main text-center py-3 rounded-top"
+        >
+          Doctor Management
+        </Card.Header>
+        <Card.Body className="p-lg-5 p-3">
+          <Form onSubmit={handleSubmit(onSubmit)}>
+            <Row className="mb-3">
+              <Col md={4}>
+                <FormInput
+                  name="doctorId"
+                  control={control}
+                  label="Doctor ID"
+                  placeholder="Doctor ID"
+                  type="number"
+                  rules={{ required: "Doctor ID is required" }}
+                />
+              </Col>
+              <Col md={4}>
+                <FormInput
+                  name="title"
+                  control={control}
+                  label="Title"
+                  placeholder="Title"
+                  rules={{ required: "Title is required" }}
+                />
+              </Col>
+              <Col md={4}>
+                <FormInput
+                  name="doctorName"
+                  control={control}
+                  label="Doctor Name"
+                  placeholder="Doctor Name"
+                  rules={{ required: "Doctor Name is required" }}
+                />
+              </Col>
+            </Row>
+            <Row className="mb-3">
+              <Col md={6}>
+                <FormInput
+                  name="fathersName"
+                  control={control}
+                  label="Father’s Name"
+                  placeholder="Father’s Name"
+                  rules={{ required: "Father’s Name is required" }}
+                />
+              </Col>
+              <Col md={6}>
+                <FormInput
+                  name="attachment"
+                  control={control}
+                  label="Attachment"
+                  placeholder="Attachment"
+                  rules={{ required: "Attachment is required" }}
+                />
+              </Col>
+            </Row>
+            <Row className="mb-3">
+              <Col md={6}>
+                <FormInput
+                  name="permanentAddress"
+                  control={control}
+                  label="Permanent Address"
+                  placeholder="Permanent Address"
+                  rules={{ required: "Permanent Address is required" }}
+                />
+              </Col>
+              <Col md={6}>
+                <FormInput
+                  name="presentAddress"
+                  control={control}
+                  label="Present Address"
+                  placeholder="Present Address"
+                  rules={{ required: "Present Address is required" }}
+                />
+              </Col>
+            </Row>
+            <Row className="mb-3">
+              <Col md={4}>
+              <FormInput
+                  name="DateOfBirth"
+                  type='date'
+                  control={control}
+                  label="Date of Birth"
+                  placeholder="Enter Date of Birth"
+                  rules={{ required: "Date of Birth is required" }}
+                />
+              </Col>
+              <Col md={4}>
+                <FormInput
+                  name="code"
+                  control={control}
+                  label="Code"
+                  placeholder="Code"
+                  rules={{ required: "Code is required" }}
+                />
+              </Col>
+              <Col md={4}>
+                <FormInput
+                  name="age"
+                  control={control}
+                  label="Age"
+                  placeholder="Age"
+                  rules={{ required: "Age is required" }}
+                />
+              </Col>
+            </Row>
+            <Row className="mb-3">
+              <Col md={4}>
+                <FormInput
+                  name="email"
+                  control={control}
+                  label="Email"
+                  placeholder="Email"
+                  type="email"
+                  rules={{ required: "Email is required" }}
+                />
+              </Col>
+              <Col md={4}>
+                <FormInput
+                  name="nationality"
+                  control={control}
+                  label="Nationality"
+                  placeholder="Nationality"
+                  rules={{ required: "Nationality is required" }}
+                />
+              </Col>
+              <Col md={4}>
+                <FormInput
+                  name="contactNumber"
+                  control={control}
+                  label="Contact Number"
+                  placeholder="Contact Number"
+                  rules={{ required: "Contact Number is required" }}
+                />
+              </Col>
+            </Row>
+            <Row className="mb-3">
+              <Col md={4}>
+                <Form.Group className='mb-3' controlId="formBloodGroup">
+                  <Form.Label>Blood Group</Form.Label>
+                  <Form.Select defaultValue="Choose...">
+                    <option>Choose...</option>
+                    <option>A+</option>
+                    <option>A-</option>
+                    <option>B+</option>
+                    <option>B-</option>
+                    <option>AB+</option>
+                    <option>AB-</option>
+                    <option>O+</option>
+                    <option>O-</option>
+                  </Form.Select>
                 </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
+              </Col>
+              <Col md={4}>
+                <FormInput
+                  name="genderNumber"
+                  control={control}
+                  label="Gender Number"
+                  placeholder="Gender Number"
+                  rules={{ required: "Gender Number is required" }}
+                />
+              </Col>
+              <Col md={4}>
+                <FormInput
+                  name="qualification"
+                  control={control}
+                  label="Qualification"
+                  placeholder="Qualification"
+                  rules={{ required: "Qualification is required" }}
+                />
+              </Col>
+            </Row>
+            <Row className="mb-3">
+              <Col md={6}>
+                <FormInput
+                  name="bankAccount"
+                  control={control}
+                  label="Bank Account"
+                  placeholder="Bank Account"
+                  type="number"
+                  rules={{ required: "Bank Account is required" }}
+                />
+              </Col>
+              <Col md={6}>
+                <FormInput
+                  name="discount"
+                  control={control}
+                  label="Discount"
+                  placeholder="Discount"
+                  type="number"
+                  rules={{ required: "Discount is required" }}
+                />
+              </Col>
+            </Row>
+            <Row className="mb-3">
+              <Col md={4}>
+                <Form.Group className='mb-3' controlId="formDoctorArea">
+                  <Form.Label>Doctor Area</Form.Label>
+                  <Form.Select defaultValue="Choose...">
+                    <option>Choose...</option>
+                    <option>Area 1</option>
+                    <option>Area 2</option>
+                    <option>Area 3</option>
+                  </Form.Select>
+                </Form.Group>
+              </Col>
+              <Col md={4}>
+                <FormInput
+                  name="rateOfVisit"
+                  control={control}
+                  label="Rate of Visit"
+                  placeholder="Rate of Visit"
+                  rules={{ required: "Rate of Visit is required" }}
+                />
+              </Col>
+              <Col md={4}>
+                <FormInput
+                  name="ob"
+                  control={control}
+                  label="OB"
+                  placeholder="OB"
+                  type="number"
+                  rules={{ required: "OB is required" }}
+                />
+              </Col>
+            </Row>
+            <Row className="mb-3">
+              <Col md={6}>
+                <FormInput
+                  name="balance"
+                  control={control}
+                  label="Balance"
+                  placeholder="Balance"
+                  type="number"
+                />
+              </Col>
+            </Row>
+            <Form.Group className="mb-3" id="formGridCheckbox">
+              <Form.Check type="checkbox" label="Check me out" required />
+            </Form.Group>
+            <div className="text-center w-100">
+              <Button
+                className="custom-bg-main border-0 d-flex align-items-center mx-auto gap-2 justify-content-center"
+                variant="primary"
+                type="submit"
+                size="md"
+              >
+                <FiSave />
+                Save
+              </Button>
             </div>
-        </div>
-    );
+          </Form>
+        </Card.Body>
+      </Card>
+    </div>
+  );
 };
 
 export default DoctorManagement;
